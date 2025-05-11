@@ -6,7 +6,7 @@
     <Services />
     <Agency />
     <FAQ />
-    <CTA />
+    <ContactUs />
     <Footer  />
   </div>
 </template>
@@ -18,7 +18,7 @@ import AboutUs from './components/2_About_us.vue'
 import Services from './components/3_Services.vue'
 import Agency from './components/4_Agency.vue'
 import FAQ from './components/5_FAQ.vue'
-import CTA from './components/6_CTA.vue'
+import ContactUs from './components/6_Contact_us.vue'
 import Footer from './components/7_Footer.vue'
 import { onMounted, ref } from 'vue'
 
