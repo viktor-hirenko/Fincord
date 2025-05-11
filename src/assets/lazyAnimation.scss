@@ -1,0 +1,40 @@
+// Базовые стили ленивой анимации
+.lazy-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.lazy-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Варианты задержки для последовательной анимации
+@for $i from 1 through 10 {
+  .lazy-delay-#{$i} {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
+
+// Кастомные варианты анимации
+.lazy-fade-only {
+  transform: translateY(0) !important;
+}
+
+.lazy-scale {
+  transform: scale(0.9) translateY(30px);
+  
+  &.lazy-animate {
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Варианты скорости анимации
+.lazy-fast {
+  transition-duration: 0.4s;
+}
+
+.lazy-slow {
+  transition-duration: 0.8s;
+} 
