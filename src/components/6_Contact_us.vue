@@ -106,7 +106,7 @@ const formData = reactive<FormData>({
 const formSubmitted = ref(false);
 const isSubmitting = ref(false);
 
-const submitForm = async () => {
+const submitForm = () => {
   // Базовая валидация
   if (!formData.name || !formData.email || !formData.phone || !formData.agreement) {
     alert('Please fill in all required fields and agree to receive messages');
@@ -120,37 +120,45 @@ const submitForm = async () => {
     return;
   }
   
-  try {
-    isSubmitting.value = true;
-    
-    // Здесь будет отправка данных в Google Sheets через веб-приложение
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        website: formData.website,
-        volume: formData.volume,
-        message: formData.message,
-        agreement: formData.agreement ? 'Yes' : 'No'
-      }),
-    });
-    
-    if (response.ok) {
-      formSubmitted.value = true;
-    } else {
-      throw new Error('Failed to submit form');
-    }
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    alert('There was an error submitting your form. Please try again.');
-  } finally {
+  isSubmitting.value = true;
+  
+  // Создаем невидимую форму и отправляем данные
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = 'https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec';
+  form.target = '_blank'; // или создать скрытый iframe
+  
+  // Добавляем поля формы
+  const addField = (name: string, value: string | number | boolean) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value.toString();
+    form.appendChild(input);
+  };
+  
+  addField('name', formData.name);
+  addField('email', formData.email);
+  addField('phone', formData.phone);
+  addField('website', formData.website || '');
+  addField('volume', formData.volume || '');
+  addField('message', formData.message || '');
+  addField('agreement', formData.agreement ? 'Yes' : 'No');
+  
+  // Добавляем форму на страницу и отправляем
+  document.body.appendChild(form);
+  form.submit();
+  
+  // После небольшой задержки показываем благодарность
+  setTimeout(() => {
+    formSubmitted.value = true;
     isSubmitting.value = false;
-  }
+  }, 1000);
+  
+  // Удаляем форму
+  setTimeout(() => {
+    document.body.removeChild(form);
+  }, 500);
 };
 </script>
 
