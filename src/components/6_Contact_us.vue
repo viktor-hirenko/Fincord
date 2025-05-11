@@ -122,11 +122,17 @@ const submitForm = () => {
   
   isSubmitting.value = true;
   
-  // Создаем невидимую форму и отправляем данные
+  // Создаем скрытый iframe для отправки
+  const iframe = document.createElement('iframe');
+  iframe.name = 'hidden_iframe';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+  
+  // Создаем форму и отправляем данные
   const form = document.createElement('form');
   form.method = 'POST';
   form.action = 'https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec';
-  form.target = '_blank'; // или создать скрытый iframe
+  form.target = 'hidden_iframe';
   
   // Добавляем поля формы
   const addField = (name: string, value: string | number | boolean) => {
@@ -153,12 +159,11 @@ const submitForm = () => {
   setTimeout(() => {
     formSubmitted.value = true;
     isSubmitting.value = false;
-  }, 1000);
-  
-  // Удаляем форму
-  setTimeout(() => {
+    
+    // Удаляем форму и iframe
     document.body.removeChild(form);
-  }, 500);
+    document.body.removeChild(iframe);
+  }, 1000);
 };
 </script>
 
