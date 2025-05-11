@@ -1,38 +1,390 @@
 <template>
   <section id="contact" class="contact_us">
-    
+    <div class="contact_wrapper">
+      <div v-if="!formSubmitted">
+        <h2>GET IN TOUCH AND RECEIVE QUOTA FOR YOUR BUSINESS</h2>
+        
+        <div class="form_grid">
+          <div class="form_field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" v-model="formData.name" placeholder="John Smith">
+          </div>
+          
+          <div class="form_field">
+            <label for="email">Your mail</label>
+            <input type="email" id="email" v-model="formData.email" placeholder="johnsmith@company.com">
+          </div>
+          
+          <div class="form_field">
+            <label for="phone">Phone number</label>
+            <div class="phone_input">
+              <div class="country_flag">
+                <img src="/ireland-flag.svg" alt="Ireland flag">
+              </div>
+              <input type="tel" id="phone" v-model="formData.phone" placeholder="+353873473686">
+            </div>
+          </div>
+          
+          <div class="form_field">
+            <label for="website">Company website</label>
+            <input type="url" id="website" v-model="formData.website" placeholder="https://sitedomain.com">
+          </div>
+          
+          <div class="form_field full_width">
+            <label>Monthly volume</label>
+            <div class="volume_options">
+              <div class="volume_option">
+                <input type="radio" id="volume1" name="volume" value="Less than $100K" v-model="formData.volume">
+                <label for="volume1">Less than $100K</label>
+              </div>
+              <div class="volume_option">
+                <input type="radio" id="volume2" name="volume" value="$100K - $1M" v-model="formData.volume">
+                <label for="volume2">$100K - $1M</label>
+              </div>
+              <div class="volume_option">
+                <input type="radio" id="volume3" name="volume" value="$1M - $10M" v-model="formData.volume">
+                <label for="volume3">$1M - $10M</label>
+              </div>
+              <div class="volume_option">
+                <input type="radio" id="volume4" name="volume" value="More than $10M" v-model="formData.volume">
+                <label for="volume4">More than $10M</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form_field full_width">
+            <label for="message">Tell us more about your needs (optional)</label>
+            <textarea id="message" v-model="formData.message" placeholder="Your message"></textarea>
+          </div>
+          
+          <div class="form_field full_width">
+            <div class="agreement">
+              <input type="checkbox" id="agreement" v-model="formData.agreement">
+              <label for="agreement">I agree to receive messages from Fincord</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="submit_wrapper">
+          <button @click="submitForm" class="submit_button" :disabled="isSubmitting">
+            {{ isSubmitting ? 'Sending...' : 'Get in touch' }}
+          </button>
+        </div>
+      </div>
+      
+      <div v-else class="thank_you">
+        <h2>Thank You for Your Message!</h2>
+        <p>We have received your inquiry and will get back to you shortly.</p>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { ref, reactive } from 'vue';
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  website: string;
+  volume: string;
+  message: string;
+  agreement: boolean;
+}
 
+const formData = reactive<FormData>({
+  name: '',
+  email: '',
+  phone: '',
+  website: '',
+  volume: '',
+  message: '',
+  agreement: false
+});
+
+const formSubmitted = ref(false);
+const isSubmitting = ref(false);
+
+const submitForm = async () => {
+  // Базовая валидация
+  if (!formData.name || !formData.email || !formData.phone || !formData.agreement) {
+    alert('Please fill in all required fields and agree to receive messages');
+    return;
+  }
+  
+  // Проверка формата email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    alert('Please enter a valid email address');
+    return;
+  }
+  
+  try {
+    isSubmitting.value = true;
+    
+    // Здесь будет отправка данных в Google Sheets через веб-приложение
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        website: formData.website,
+        volume: formData.volume,
+        message: formData.message,
+        agreement: formData.agreement ? 'Yes' : 'No'
+      }),
+    });
+    
+    if (response.ok) {
+      formSubmitted.value = true;
+    } else {
+      throw new Error('Failed to submit form');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('There was an error submitting your form. Please try again.');
+  } finally {
+    isSubmitting.value = false;
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.cta {
+.contact_us {
   position: relative;
   width: 100%;
-  top: 0;
-  left: 0;
-  height: auto;
-  min-height: 26rem;
-  background: linear-gradient(270deg, #8501FF -2.45%, #BB01FF 100%);
-  @media screen and (max-width: 959px) {
-    min-height: 18rem;
-  }
+  padding: 4rem 0;
+  color: #fff;
+  background-color: #000;
 }
 
-.cta_wrapper {
+.contact_wrapper {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   max-width: 77rem;
   width: 100%;
+  padding: 0 1rem;
+  
   @media screen and (max-width: 1150px) {
     max-width: 90%;
   }
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #D4AF37;
+}
 
+.form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form_field {
+  display: flex;
+  flex-direction: column;
+  
+  &.full_width {
+    grid-column: 1 / -1;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    color: #D4AF37;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  textarea {
+    background-color: rgba(212, 175, 55, 0.2);
+    border: none;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    border-radius: 0;
+    font-size: 1rem;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    &:focus {
+      outline: 1px solid #D4AF37;
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+}
+
+.phone_input {
+  display: flex;
+  align-items: center;
+  background-color: rgba(212, 175, 55, 0.2);
+  
+  .country_flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.8rem;
+    
+    img {
+      width: 1.5rem;
+      height: auto;
+    }
+  }
+  
+  input {
+    flex: 1;
+    background: none;
+  }
+}
+
+.volume_options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+  
+  .volume_option {
+    position: relative;
+    
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      
+      &:checked + label {
+        background-color: rgba(212, 175, 55, 0.4);
+      }
+    }
+    
+    label {
+      display: flex;
+      align-items: center;
+      background-color: rgba(212, 175, 55, 0.2);
+      padding: 0.8rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 0;
+      height: 100%;
+      
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 1px solid #D4AF37;
+        margin-right: 0.5rem;
+        background-color: transparent;
+      }
+    }
+    
+    input[type="radio"]:checked + label:before {
+      background-color: #D4AF37;
+    }
+  }
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #D4AF37;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    
+    &:checked:after {
+      content: '';
+      position: absolute;
+      left: 0.3rem;
+      top: 0.1rem;
+      width: 0.5rem;
+      height: 0.8rem;
+      border: solid #D4AF37;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+  
+  label {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.submit_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submit_button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.8rem 3rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  
+  &:hover {
+    background-color: #D4AF37;
+    color: #000;
+    border-color: #D4AF37;
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.thank_you {
+  text-align: center;
+  padding: 3rem 1rem;
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
 </style>
