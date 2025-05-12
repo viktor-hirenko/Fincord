@@ -35,7 +35,6 @@
   left: 0;
   display: flex;
   justify-content: center;
-  background: linear-gradient(180deg, #8501FF 0%, #000 100%);
   height: 62.1rem;
   height: 100vh;
     @supports (height: 100dvh) {
