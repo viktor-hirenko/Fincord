@@ -131,6 +131,7 @@ const closeMenu = (e?: MouseEvent) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
 }
 
 .header__logo {
@@ -151,14 +152,13 @@ const closeMenu = (e?: MouseEvent) => {
 .header__button {
   position: relative;
   display: flex;
-  margin-right: 5rem;
+  margin-right: 4rem;
   cursor: pointer;
-  padding: 0.55rem 1.25rem;
+  padding: 0.44rem 1.7rem;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 5.5rem;
-  background: linear-gradient(90deg, #BB01FF 0%, #8501FF 100%);
+  background: #F2F2F2;
   @media screen and (max-width: 1000px) {
     margin-right: 1rem;
   }
@@ -168,7 +168,7 @@ const closeMenu = (e?: MouseEvent) => {
 }
 
 .header__button:hover {
-  background: linear-gradient(90deg, #ff0ddd 0%, #ff031c 100%);
+  background: #C9B36E;
 }
 
 .button_text {
@@ -187,9 +187,11 @@ const closeMenu = (e?: MouseEvent) => {
 
 .menu_wrapper {
   display: flex;
-  gap: 3.25rem;
+  gap: 3rem;
   align-items: center;
-  position: relative; 
+  position: relative;
+  margin-left: 3rem;
+  margin-right: auto;
   @media screen and (max-width: 1100px) {
     gap: 2rem;
   }
@@ -208,7 +210,7 @@ const closeMenu = (e?: MouseEvent) => {
 }
 
 .menu_item:hover {
-  color: #ff0775;
+  color: #C9B36E;
 }
 
 /* Гамбургер меню */
@@ -253,6 +255,7 @@ const closeMenu = (e?: MouseEvent) => {
 .header-controls {
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 
 /* Мобильное меню */
@@ -327,7 +330,7 @@ const closeMenu = (e?: MouseEvent) => {
   }
   
   &:hover {
-    color: #ff0775;
+    color: #C9B36E;
   }
 }
 
@@ -341,7 +344,7 @@ const closeMenu = (e?: MouseEvent) => {
   background: linear-gradient(90deg, #BB01FF 0%, #8501FF 100%);
   
   &:hover {
-    background: linear-gradient(90deg, #ff0ddd 0%, #ff031c 100%);
+    background: #C9B36E;
   }
 }
 

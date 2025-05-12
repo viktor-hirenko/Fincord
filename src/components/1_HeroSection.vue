@@ -1,21 +1,10 @@
 <template>
   <section id="home" class="hero">
+    <img src="/img/hero_img.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
+    <div class="noice">
+    </div>
     <div class="hero_wrapper">
       <div class="hero_content">
-      <h1 class="hero_title" v-lazy-animate="{delay: 300}">
-        <span class="hero_title_span_white"><span>Be Seen</span></span>
-        <span class="hero_title_span_color">Be Heard</span> <br class="hero_title_span_br"> 
-        <span class="hero_title_span_pink">Be Unforgettable</span>
-      </h1>
-      <h2 class="hero_subtitle" v-lazy-animate="{delay: 600}">
-        From SEO to branding, <br class="hero_title_span_br">  we build marketing <br>
-         that sticks. Let's get started!
-        </h2>
-        <a href="mailto:info@makeberry.com">
-        <div class="hero_button" v-lazy-animate="{delay: 800}">
-        <div class="button_text">Contact Us</div>
-      </div>
-      </a>
       </div>
       
     </div>
@@ -150,8 +139,33 @@
   }
 }
 
+.hero_img {
+  position: absolute;
+  top: 7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75rem;
+  height: auto;
+  z-index: 0;
+  @media screen and (max-width: 959px) {
+    height: 100%;
+    width: auto;
+    top: 0;
+  }
+}
 
-
-
+.noice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url('/img/noise.svg');
+  background-size: 6.25rem;
+  background-position: center;
+  background-repeat: repeat;
+  mix-blend-mode: color-burn;
+}
 
 </style>

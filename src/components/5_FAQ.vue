@@ -199,7 +199,7 @@ const getAnswerStyle = (index: number) => {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .faq {
   position: relative;
   width: 100%;
