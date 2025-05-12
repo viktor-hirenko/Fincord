@@ -157,12 +157,12 @@
 
 .lines_img {
   position: absolute;
-    top: -4rem;
-    left: 47rem;
-    transform: perspective(600px) rotateY(47deg) rotateZ(343deg);
-    width: 63rem;
-    height: 100%;
-    z-index: 1;
+  top: -6rem;
+  left: 50%;
+  transform: perspective(600px) rotateY(57deg) rotateZ(346deg) translateX(-5%);
+  width: 55rem;
+  height: 100%;
+  z-index: 1;
 }
 
 .noice {
