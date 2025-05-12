@@ -1,13 +1,14 @@
 <template>
   <section id="home" class="hero">
     <img src="/img/hero_img.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
-    <div class="noice">
-    </div>
+    <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
+    
     <div class="hero_wrapper">
       <div class="hero_content">
       </div>
       
     </div>
+    <div class="noice"></div>
   </section>
 </template>
 
@@ -148,10 +149,20 @@
   height: auto;
   z-index: 0;
   @media screen and (max-width: 959px) {
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     top: 0;
   }
+}
+
+.lines_img {
+  position: absolute;
+    top: -4rem;
+    left: 47rem;
+    transform: perspective(600px) rotateY(47deg) rotateZ(343deg);
+    width: 63rem;
+    height: 100%;
+    z-index: 1;
 }
 
 .noice {
@@ -160,12 +171,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 10;
   background-image: url('/img/noise.svg');
   background-size: 6.25rem;
   background-position: center;
   background-repeat: repeat;
   mix-blend-mode: color-burn;
+  pointer-events: none;
 }
 
 </style>
