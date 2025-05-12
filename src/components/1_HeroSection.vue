@@ -8,7 +8,7 @@
     
     <div class="hero_wrapper">
       <div class="hero_content">
-        <div class="hero_counter">20 711</div>
+        <div class="hero_counter">{{ formattedCounter }}</div>
         <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
       </div>
       
@@ -18,7 +18,77 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 
+// Счетчик
+const counter = ref(0);
+const intervalId = ref<number | null>(null);
+
+// Форматирование числа с пробелами через каждые 3 цифры
+const formattedCounter = computed(() => {
+  return counter.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+});
+
+// Функция для получения количества дней с начала года
+const getDayOfYear = () => {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = now.getTime() - start.getTime();
+  const oneDay = 1000 * 60 * 60 * 24;
+  return Math.floor(diff / oneDay);
+};
+
+// Инициализация счетчика
+const initCounter = () => {
+  const dayOfYear = getDayOfYear();
+  
+  // Определяем начальное и конечное значения
+  const startValue = 1000 + dayOfYear;
+  const endValue = 25000 + dayOfYear;
+  
+  // Получаем текущее время UTC
+  const now = new Date();
+  const utcHours = now.getUTCHours();
+  const utcMinutes = now.getUTCMinutes();
+  const utcSeconds = now.getUTCSeconds();
+  const secondsPassed = utcHours * 3600 + utcMinutes * 60 + utcSeconds;
+  const secondsInDay = 24 * 60 * 60;
+  
+  // Рассчитываем прогресс дня (от 0 до 1)
+  const dayProgress = secondsPassed / secondsInDay;
+  
+  // Рассчитываем текущее значение счетчика на основе времени дня
+  const currentValue = Math.floor(startValue + (endValue - startValue) * dayProgress);
+  counter.value = currentValue;
+  
+  // Обновляем счетчик с рандомными интервалами
+  const updateCounter = () => {
+    // Увеличиваем счетчик только на 1
+    counter.value += 1;
+    
+    // Ограничиваем верхним пределом
+    if (counter.value > endValue) {
+      counter.value = endValue;
+    }
+    
+    // Устанавливаем следующий интервал (от 0.5 до 3 секунд)
+    const nextInterval = Math.floor(Math.random() * 2500) + 500;
+    intervalId.value = window.setTimeout(updateCounter, nextInterval);
+  };
+  
+  // Запускаем обновление
+  updateCounter();
+};
+
+onMounted(() => {
+  initCounter();
+});
+
+onUnmounted(() => {
+  if (intervalId.value !== null) {
+    clearTimeout(intervalId.value);
+  }
+});
 </script>
 
 <style lang="scss" scoped>
