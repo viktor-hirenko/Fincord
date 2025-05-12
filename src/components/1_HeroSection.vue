@@ -5,7 +5,7 @@
     <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
   </div>
 
-    
+  <div class="noice"></div>
     <div class="hero_wrapper">
       <div class="hero_content">
         <div class="hero_counter">{{ formattedCounter }}</div>
@@ -13,7 +13,7 @@
       </div>
       
     </div>
-    <div class="noice"></div>
+
   </section>
 </template>
 
@@ -117,6 +117,7 @@ onUnmounted(() => {
   width: 100%;
   display: flex;
   justify-content: center;
+  z-index: 1;
   @media screen and (max-width: 959px) {
     top: 0;
     height: 100%;
@@ -142,8 +143,8 @@ onUnmounted(() => {
   font-weight: 700;
   line-height: normal;
   text-align: left;
-  z-index: 1;
   width: 16rem;
+  z-index: 10;
 }
 
 .hero_counter_description {
