@@ -8,6 +8,8 @@
     
     <div class="hero_wrapper">
       <div class="hero_content">
+        <div class="hero_counter">20 711</div>
+        <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
       </div>
       
     </div>
@@ -54,94 +56,39 @@
 }
 
 .hero_content {
-  position: relative;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 10.8rem;
-  filter: drop-shadow(0px 0px 70px black);
-  @media screen and (max-width: 959px) {
-    top: 0;
-  }
+  position: absolute;
+  left: 50%;
+  top: 30.4rem;
+  transform: translateX(85%);
 }
 
-.hero_title {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #FFF;
-  font-size: 3rem;
+
+.hero_counter {
+  position: relative;
+  left: 0;
+  color: #F2F2F2;
+  font-size: 3.7rem;
   font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  white-space: nowrap;
-  @media screen and (max-width: 959px) {
-    font-size: 1.75rem;
-  }
-}
-
-.hero_title_span_br {
-  display: none;
-  @media screen and (max-width: 959px) {
-    display: block;
-  }
-}
-
-.hero_subtitle {
-  position: relative;
-  text-align: center;
-  max-width: 32rem;
-  margin: 0 auto;
-  color: #FFF;
-  top: 0.9rem;
-  @media screen and (max-width: 959px) {
-    font-size: 1.25rem;
-  }
-}
-
-.hero_subtitle_span {
-  color: var(--Alpa-Fonts-colors-color-text-menu-active, #FDD835);
-  cursor: pointer;
-}
-
-@keyframes heroImageRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.hero_button {
-  position: relative;
-  display: flex;
-  cursor: pointer;
-  padding: 0.75rem 1.5rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5.5rem;
-  background: linear-gradient(90deg, #BB01FF 0%, #8501FF 100%);
-  top: 3.15rem;
-  @media screen and (max-width: 959px) {
-    filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.49));
-  }
-}
-
-.hero_button:hover {
-  background: linear-gradient(90deg, #ff0ddd 0%, #ff031c 100%);
-}
-
-.button_text {
-  color: #000;
-  font-size: 1.875rem;
-  font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
-  @media screen and (max-width: 959px) {
-    font-size: 1.4rem;
-  }
+  text-align: left;
+  z-index: 1;
+  width: 16rem;
 }
+
+.hero_counter_description {
+  position: relative;
+  color: #F2F2F2;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-align: left;
+  z-index: 1;
+  margin-top: 0.6rem;
+}
+
+
 
 .hero_img {
   position: absolute;
@@ -200,5 +147,7 @@
   mix-blend-mode: color-burn;
   pointer-events: none;
 }
+
+
 
 </style>
