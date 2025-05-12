@@ -1,6 +1,5 @@
 <template>
   <section id="home" class="hero">
-    <img src="/img/hero_img.webp?1" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
     <div class="hero_wrapper">
       <div class="hero_content">
       <h1 class="hero_title" v-lazy-animate="{delay: 300}">
@@ -151,21 +150,7 @@
   }
 }
 
-.hero_img {
-  position: absolute;
-  top: -10rem;
-  left: 50%;
-  transform: translateX(-50%) scale(1.15);
-  width: 1080px;
-  height: 1080px;
-  aspect-ratio: 1 / 1;
-  animation: ImageFloat 3s ease-in-out infinite;
-  @media screen and (max-width: 959px) {
-    height: 100%;
-    width: auto;
-    top: 0;
-  }
-}
+
 
 
 

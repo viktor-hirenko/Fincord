@@ -8,25 +8,16 @@
       <!-- Десктопное меню -->
       <div class="menu_wrapper">
         <div class="menu_item">
-          <a href="#home">Home</a>
+          <a href="#home">product</a>
         </div>
         <div class="menu_item">
-          <a href="#about">About</a>
+          <a href="#about">about</a>
         </div>
         <div class="menu_item">
-          <a href="#services">Services</a>
+          <a href="#services">hiring</a>
         </div>
         <div class="menu_item">
-          <a href="#experience">Expertise</a>
-        </div>
-        <div class="menu_item">
-          <a href="#why_us">Why us</a>
-        </div>
-        <div class="menu_item">
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="menu_item">
-          <a href="#contact">Contacts</a>
+          <a href="#experience">blog</a>
         </div>
       </div>
       
@@ -59,25 +50,16 @@
         </div>
         <div class="mobile-menu__items">
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#home">Home</a>
+            <a href="#home">product</a>
           </div>
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#about">About</a>
+            <a href="#about">about</a>
           </div>
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#services">Services</a>
+            <a href="#services">hiring</a>
           </div>
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#experience">Expertise</a>
-          </div>
-          <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#why_us">Why us</a>
-          </div>
-          <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#faq">FAQ</a>
-          </div>
-          <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#contact">Contacts</a>
+            <a href="#experience">blog</a>
           </div>
         </div>
       </div>
@@ -133,10 +115,10 @@ const closeMenu = (e?: MouseEvent) => {
   left: 0;
   display: flex;
   width: 100%;
-  height: 72px;
+  height: 6.25rem;
   justify-content: space-between;
   align-items: center;
-  background: #0F0F0F;
+  // background: #0F0F0F;
   z-index: 1000;
 }
 
@@ -144,7 +126,7 @@ const closeMenu = (e?: MouseEvent) => {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 87rem;
+  max-width: 83rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -154,8 +136,8 @@ const closeMenu = (e?: MouseEvent) => {
 .header__logo {
   display: flex;
   margin-left: 4rem;
-  width: 173px;
-  height: 29px;
+  width: 11.75rem;
+  height: 2.06rem;
   align-items: center;
   gap: 0.125rem;
   flex-shrink: 0;
@@ -205,7 +187,7 @@ const closeMenu = (e?: MouseEvent) => {
 
 .menu_wrapper {
   display: flex;
-  gap: 2.25rem;
+  gap: 3.25rem;
   align-items: center;
   position: relative; 
   @media screen and (max-width: 1100px) {
