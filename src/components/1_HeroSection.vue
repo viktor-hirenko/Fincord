@@ -1,7 +1,10 @@
 <template>
   <section id="home" class="hero">
+    <div class="hero_img_wrapper">
     <img src="/img/hero_img.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
     <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
+  </div>
+
     
     <div class="hero_wrapper">
       <div class="hero_content">
@@ -142,27 +145,45 @@
 
 .hero_img {
   position: absolute;
-  top: 7rem;
+  top: 112px;
   left: 50%;
   transform: translateX(-50%);
-  width: 75rem;
+  width: 1200px;
   height: auto;
   z-index: 0;
-  @media screen and (max-width: 959px) {
-    width: 100%;
-    height: auto;
-    top: 0;
-  }
 }
 
 .lines_img {
   position: absolute;
-    top: -6rem;
-    left: 50%;
-    transform: perspective(800px) rotateY(54deg) rotateZ(346deg) translateX(-16%);
-    width: 58rem;
-    height: 100%;
-    z-index: 1;
+  top: -96px;
+  left: 50%;
+  transform: perspective(800px) rotateY(54deg) rotateZ(346deg) translateX(-16%);
+  -webkit-transform: perspective(800px) rotateY(54deg) rotateZ(346deg) translateX(-16%);
+  width: 928px;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero_img_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: top;
+  @media screen and (max-width: 1250px) {
+    transform: scale(0.9);
+  }
+  @media screen and (max-width: 1100px) {
+    transform: scale(0.8);
+  }
+  @media screen and (max-width: 1024px) {
+    transform: scale(0.7);
+  }
+  @media screen and (max-width: 959px) {
+    transform: scale(0.6);
+  }
 }
 
 .noice {
