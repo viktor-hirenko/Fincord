@@ -71,6 +71,10 @@
         </a>
       </div>
       </div>
+      <div class="hero_img_wrapper wap_img_2">
+      <img src="/img/hero_img1.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
+      <img src="/img/line1.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img line_1">
+    </div>
     </div>
   </section>
 </template>
@@ -386,4 +390,29 @@ onUnmounted(() => {
   fill: #C9B36E;
   transition: all 0.3s ease;
 }
+
+.wap_img_2 {
+  position: relative;
+  margin-top: 5rem;
+  height: 800px;
+  
+}
+
+.line_1 {
+  transform: perspective(600px) rotateX(52deg);
+  left: 0;
+  width: 1000px;
+  height: auto;
+  top: 141px;
+  margin-left: 216px;
+}
+
+.img_2 {
+  position: relative;
+  margin-top: 25px;
+  width: 1057px;
+  height: 251px;
+
+}
+
 </style>
