@@ -14,19 +14,21 @@
           <div class="form_field">
             <label for="name">Your name</label>
             <input type="text" id="name" v-model="formData.name" placeholder="John Smith">
+            <p v-if="errors.name" class="error-message">{{ errors.name }}</p>
           </div>
           
           <div class="form_field">
             <label for="email">Your mail</label>
             <input type="email" id="email" v-model="formData.email" placeholder="johnsmith@company.com">
+            <p v-if="errors.email" class="error-message">{{ errors.email }}</p>
           </div>
           
           <div class="form_field">
             <label for="phone">Phone number</label>
             <div class="phone_input">
- 
               <input type="tel" id="phone" v-model="formData.phone" placeholder="+353873473686">
             </div>
+            <p v-if="errors.phone" class="error-message">{{ errors.phone }}</p>
           </div>
           
           <div class="form_field">
@@ -97,6 +99,12 @@ interface FormData {
   agreement: boolean;
 }
 
+interface Errors {
+  name?: string;
+  email?: string;
+  phone?: string;
+}
+
 const formData = reactive<FormData>({
   name: '',
   email: '',
@@ -107,20 +115,48 @@ const formData = reactive<FormData>({
   agreement: false
 });
 
+const errors = reactive<Errors>({});
 const formSubmitted = ref(false);
 const isSubmitting = ref(false);
 
-const submitForm = () => {
-  // Базовая валидация
-  if (!formData.name || !formData.email || !formData.phone || !formData.agreement) {
-    alert('Please fill in all required fields and agree to receive messages');
-    return;
+const validateForm = (): boolean => {
+  let isValid = true;
+  
+  // Очищаем предыдущие ошибки
+  errors.name = undefined;
+  errors.email = undefined;
+  errors.phone = undefined;
+  
+  // Проверяем имя
+  if (!formData.name) {
+    errors.name = 'Please enter your name';
+    isValid = false;
   }
   
-  // Проверка формата email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(formData.email)) {
-    alert('Please enter a valid email address');
+  // Проверяем email
+  if (!formData.email) {
+    errors.email = 'Please enter your email';
+    isValid = false;
+  } else {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+      isValid = false;
+    }
+  }
+  
+  // Проверяем телефон
+  if (!formData.phone) {
+    errors.phone = 'Please enter your phone number';
+    isValid = false;
+  }
+  
+  return isValid;
+};
+
+const submitForm = () => {
+  // Валидация формы
+  if (!validateForm()) {
     return;
   }
   
@@ -207,8 +243,13 @@ h2 {
   gap: 1.5rem;
   margin-bottom: 2rem;
   font-size: 0.875rem;
-  
+}
 
+.error-message {
+  color: #ff4747;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
 }
 
 .form_field {
@@ -444,15 +485,10 @@ h2 {
 .lines.img1 {
   left: -780px;
   transform: perspective(500px) rotateY(55deg);
-
 }
 
 .lines.img2 {
   left: 150px;
   transform: perspective(500px) rotateY(-55deg) rotateZ(180deg);
 }
-
-
-
-
 </style>
