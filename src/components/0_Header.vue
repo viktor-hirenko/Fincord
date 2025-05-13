@@ -188,14 +188,14 @@ const closeMenu = (e?: MouseEvent) => {
 }
 
 .menu-link {
-  color: #fff !important;
+  color: #fff;
   text-decoration: none;
 }
 
-.menu-link:hover, 
-.menu-link.router-link-exact-active {
-  color: #C9B36E !important;
+.menu-link:hover  {
+  color: #C9B36E 
 }
+
 
 /* Гамбургер меню */
 .hamburger {
