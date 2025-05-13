@@ -26,7 +26,42 @@
         
           </div>
           <div class="divider"></div>
+          <div class="service_item">
+            <div class="service_item_title">
+              Banking
+            </div>
+            <div class="service_item_description">
+              We share connections with a global banking network, so that you could open B2B accounts, make transfers and foreign exchange seamlessly.  
+            </div>
+        
+          </div>
+          <div class="divider"></div>
+          <div class="service_item">
+            <div class="service_item_title">
+              Payment <br> Technology
+            </div>
+            <div class="service_item_description">
+              We advise regarding all the questions related to payment software development, data protection and data storage consulting.
+            </div>
+        
+          </div>
+          <div class="divider"></div>
+          <div class="service_item">
+            <div class="service_item_title">
+              Compliance and <br> Risk management
+            </div>
+            <div class="service_item_description">
+              We help create and implement robust compliance policies and procedures tailored to specific regulatory requirements and industry best practices.
+            </div>
+        
+          </div>
+          <div class="divider"></div>
         </div>
+        
+
+
+
+
       </div>
       
     </div>
