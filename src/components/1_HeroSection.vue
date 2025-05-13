@@ -5,7 +5,7 @@
       <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
     </div>
 
-    <div class="noice"></div>
+    
     <div class="hero_wrapper">
       <div class="hero_content">
         <div class="hero_counter">{{ formattedCounter }}</div>
@@ -75,7 +75,21 @@
       <img src="/img/hero_img1.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
       <img src="/img/line1.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img line_1">
     </div>
+    <div class="hero_cta">
+      <img src="/img/map.webp" alt="" class="map_img">
+      <div class="hero_cta_title">
+        our business vision extends
+above and beyond specific industry or geogrphy
+      </div>
+      <div class="hero_cta_description">
+        We are experts in fintech, no matter where you do it. Each clients gets a personal account manager available 24/7.
+        <br> <br>
+Our connections with an extensive global network of payment method providers brings flexibility multiplied by worldwide coverage.
+      </div>
+      <div class="hero_cta_button">Get in touch</div>
     </div>
+    </div>
+    <div class="noise"></div>
   </section>
 </template>
 
@@ -161,7 +175,7 @@ onUnmounted(() => {
   left: 0;
   display: flex;
   justify-content: center;
-  height: 223.4rem;
+  min-height: 223.4rem;
 }
 
 .hero_wrapper {
@@ -414,5 +428,69 @@ onUnmounted(() => {
   height: 251px;
 
 }
+
+.hero_cta {
+  position: relative;
+  margin-top: -2.25rem;
+  
+}
+
+.hero_cta_title {
+  position: relative;
+  color: #C9B36E;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  line-height: 130%;
+  max-width: 51rem;
+  margin-left: 7.25rem;
+}
+
+.hero_cta_description {
+  position: relative;
+  color: #C9B36E;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 12.5rem;
+  margin-top: 3rem;
+  line-height: 130%;
+  max-width: 19rem;
+}
+
+.hero_cta_button {
+  position: relative;
+  color: #000;
+  background: #FFF;
+  text-align: center;
+  font-size: 1.46rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  white-space: nowrap;
+  padding: 0.75rem 1.8rem;
+  max-width: 10.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 12.5rem;
+  margin-top: 4.25rem;
+  &:hover {
+    background: #C9B36E;
+    color: #000;
+  }
+
+}
+
+.map_img {
+  position: absolute;
+  top: 7rem;
+  left: 26rem;
+  width: 69rem;
+  height: auto;
+}
+
 
 </style>
