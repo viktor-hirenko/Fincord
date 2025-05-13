@@ -1,11 +1,11 @@
 <template>
   <section id="home" class="hero">
     <div class="hero_img_wrapper">
-    <img src="/img/hero_img.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
-    <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
-  </div>
+      <img src="/img/hero_img.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
+      <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
+    </div>
 
-  <div class="noice"></div>
+    <div class="noice"></div>
     <div class="hero_wrapper">
       <div class="hero_content">
         <div class="hero_counter">{{ formattedCounter }}</div>
@@ -23,7 +23,6 @@
             <div class="service_item_description">
               Multitude of payment methods available globally - cards and alternative payment methods. We introduce your business to both deposits and payouts.
             </div>
-        
           </div>
           <div class="divider"></div>
           <div class="service_item">
@@ -33,7 +32,6 @@
             <div class="service_item_description">
               We share connections with a global banking network, so that you could open B2B accounts, make transfers and foreign exchange seamlessly.  
             </div>
-        
           </div>
           <div class="divider"></div>
           <div class="service_item">
@@ -43,7 +41,6 @@
             <div class="service_item_description">
               We advise regarding all the questions related to payment software development, data protection and data storage consulting.
             </div>
-        
           </div>
           <div class="divider"></div>
           <div class="service_item">
@@ -53,33 +50,28 @@
             <div class="service_item_description">
               We help create and implement robust compliance policies and procedures tailored to specific regulatory requirements and industry best practices.
             </div>
-        
           </div>
-          
         </div>
-
-        
-        
-
-
-
-
+        <div class="buttons_wrapper">
+        <a href="/" class="cta_button">
+          <div class="button_cotainer">
+            Get in touch
+            <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+<path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z" fill="#C9B36E"/>
+</svg>
+          </div>
+        </a>
+        <a href="/" class="cta_button">
+          <div class="button_cotainer">
+            we are hiring
+            <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+<path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z" fill="#C9B36E"/>
+</svg>
+          </div>
+        </a>
       </div>
-      <div class="buttons_wrapper">
-          <a href="/" class="cta_button">
-            <div class="button_cotainer">
-              Get in touch
-            </div>
-          </a>
-          <a href="/" class="cta_button">
-            <div class="button_cotainer">
-              we are hiring
-            </div>
-          </a>
-        </div>
-      
+      </div>
     </div>
-
   </section>
 </template>
 
@@ -266,8 +258,8 @@ onUnmounted(() => {
 .hero_content_wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   margin-top: 47rem;
 }
@@ -351,6 +343,9 @@ onUnmounted(() => {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
+  margin-left: 14.2rem;
+  margin-top: 10.5rem;
+  max-width: 60.5rem;
 }
 
 .cta_button {
@@ -363,11 +358,27 @@ onUnmounted(() => {
   display: flex;
   flex-direction: row;
   margin-left: 2rem;
-  max-width: 27.3rem;
-  height: 9.9rem;
+  max-width: 26rem;
+  height: 8.7rem;
   border: 3px solid rgba(201, 179, 110, 0.30);
-
+  color: #C9B36E;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  transition: all 0.3s ease;
+  &:hover {
+    background: #C9B36E;
+    color: #000;
+  }
 }
 
-
+.arrow_icon {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
 </style>
