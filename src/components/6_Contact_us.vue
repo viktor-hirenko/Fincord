@@ -18,9 +18,7 @@
           <div class="form_field">
             <label for="phone">Phone number</label>
             <div class="phone_input">
-              <div class="country_flag">
-                <img src="/ireland-flag.svg" alt="Ireland flag">
-              </div>
+ 
               <input type="tel" id="phone" v-model="formData.phone" placeholder="+353873473686">
             </div>
           </div>
@@ -173,14 +171,14 @@ const submitForm = () => {
   width: 100%;
   padding: 4rem 0;
   color: #fff;
-  background-color: #000;
+  // background-color: #000;
 }
 
 .contact_wrapper {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 77rem;
+  max-width: 34rem;
   width: 100%;
   padding: 0 1rem;
   
@@ -190,21 +188,21 @@ const submitForm = () => {
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
+  font-size: 1.16rem;
+  margin-top: 3.5rem;
   text-align: center;
-  color: #D4AF37;
+  color: #C9B36E;
 }
 
 .form_grid {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  font-size: 0.875rem;
   
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
+
 }
 
 .form_field {
@@ -217,7 +215,7 @@ h2 {
   
   label {
     margin-bottom: 0.5rem;
-    color: #D4AF37;
+    color: #C9B36E;
   }
   
   input[type="text"],
@@ -225,7 +223,7 @@ h2 {
   input[type="tel"],
   input[type="url"],
   textarea {
-    background-color: rgba(212, 175, 55, 0.2);
+    background: rgba(201, 179, 110, 0.40);
     border: none;
     padding: 0.8rem 1rem;
     color: #fff;
@@ -233,11 +231,11 @@ h2 {
     font-size: 1rem;
     
     &::placeholder {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(0, 0, 0, 0.60);
     }
     
     &:focus {
-      outline: 1px solid #D4AF37;
+      outline: 1px solid #C9B36E;
     }
   }
   
@@ -247,10 +245,13 @@ h2 {
   }
 }
 
+.volume_options .volume_option label {
+  color: rgba(0, 0, 0, 0.60);
+}
+
 .phone_input {
   display: flex;
   align-items: center;
-  background-color: rgba(212, 175, 55, 0.2);
   
   .country_flag {
     display: flex;
@@ -293,19 +294,22 @@ h2 {
       height: 0;
       
       &:checked + label {
-        background-color: rgba(212, 175, 55, 0.4);
+        background-color: rgba(201, 179, 110, 0.40);
       }
     }
     
     label {
       display: flex;
       align-items: center;
-      background-color: rgba(212, 175, 55, 0.2);
-      padding: 0.8rem;
+      background-color: rgba(201, 179, 110, 0.40);
+      padding: 0.5rem;
       cursor: pointer;
+      font-size: 0.625rem;
+      color: #000;
       transition: background-color 0.3s;
       margin: 0;
-      height: 100%;
+      height: 2rem;
+      white-space: nowrap;
       
       &:before {
         content: '';
@@ -313,14 +317,16 @@ h2 {
         width: 1rem;
         height: 1rem;
         border-radius: 50%;
-        border: 1px solid #D4AF37;
-        margin-right: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.60);;
+        margin-right: 0.4rem;
         background-color: transparent;
+        position: relative;
+        aspect-ratio: 1/1;
       }
     }
     
     input[type="radio"]:checked + label:before {
-      background-color: #D4AF37;
+      background-color: #C9B36E;
     }
   }
 }
@@ -334,7 +340,7 @@ h2 {
     -webkit-appearance: none;
     width: 1.25rem;
     height: 1.25rem;
-    border: 1px solid #D4AF37;
+    border: 1px solid #C9B36E;
     background-color: transparent;
     display: inline-block;
     position: relative;
@@ -346,9 +352,9 @@ h2 {
       position: absolute;
       left: 0.3rem;
       top: 0.1rem;
-      width: 0.5rem;
-      height: 0.8rem;
-      border: solid #D4AF37;
+      width: 0.4rem;
+      height: 0.5rem;
+      border: solid #C9B36E;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
@@ -367,6 +373,7 @@ h2 {
 }
 
 .submit_button {
+  margin-top: 1rem;
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
@@ -376,9 +383,9 @@ h2 {
   transition: background-color 0.3s, color 0.3s;
   
   &:hover {
-    background-color: #D4AF37;
+    background-color: #C9B36E;
     color: #000;
-    border-color: #D4AF37;
+    border-color: #C9B36E;
   }
   
   &:disabled {
