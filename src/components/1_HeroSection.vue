@@ -11,6 +11,23 @@
         <div class="hero_counter">{{ formattedCounter }}</div>
         <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
       </div>
+      <div class="hero_content_wrapper">
+        <div class="hero_title">
+          Talk to us about:
+        </div>
+        <div class="services_list">
+          <div class="service_item">
+            <div class="service_item_title">
+              Payment <br> processing
+            </div>
+            <div class="service_item_description">
+              Multitude of payment methods available globally - cards and alternative payment methods. We introduce your business to both deposits and payouts.
+            </div>
+        
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
       
     </div>
 
@@ -99,21 +116,13 @@ onUnmounted(() => {
   left: 0;
   display: flex;
   justify-content: center;
-  height: 62.1rem;
-  height: 100vh;
-    @supports (height: 100dvh) {
-      height: 100dvh;
-    }
-  @media screen and (max-width: 959px) {
-    min-height: unset;
-    
-  }
+  height: 223.4rem;
 }
 
 .hero_wrapper {
   top: 5rem;
   position: relative;
-  max-width: 76rem;
+  max-width: 90rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -187,25 +196,94 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  width: 1216px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1088px;
   z-index: 1;
   transform-origin: top;
   @media screen and (max-width: 1250px) {
-    transform: scale(0.9);
+    transform: scale(0.9) translateX(-55%);
   }
   @media screen and (max-width: 1100px) {
-    transform: scale(0.8);
+    transform: scale(0.8) translateX(-60%);
   }
   @media screen and (max-width: 1024px) {
-    transform: scale(0.7);
+    transform: scale(0.7) translateX(-65%);
   }
   @media screen and (max-width: 959px) {
-    transform: scale(0.6);
+    transform: scale(0.6) translateX(-70%);
   }
 }
 
+.hero_content_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 47rem;
+}
 
+.hero_title {
+  position: relative;
+  text-align: left;
+  display: flex;
+  color: #F2F2F2;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 7.5rem;
+  width: 12rem;
+  white-space: nowrap;
+  margin-top: .75rem;
+}
 
+.services_list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 13.25rem;
+}
 
+.service_item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.service_item_title {
+  position: relative;
+  color: #C9B36E;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.service_item_description {
+  position: relative;
+  color: #C9B36E;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15.25rem;
+  max-width: 16rem;
+  margin-top: .75rem;
+  line-height: 130%;
+}
+
+.divider {
+  position: relative;
+    left: -15%;
+    width: 152%;
+    height: 3px;
+    opacity: 0.3;
+    background: #C9B36E;
+    margin-top: 2rem;
+}
 
 </style>
