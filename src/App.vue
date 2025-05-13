@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import Header from './components/0_Header.vue'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 
 function adjustScale(): void {
   const vh = Math.round(window.innerHeight / 100)

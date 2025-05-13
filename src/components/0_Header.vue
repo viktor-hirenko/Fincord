@@ -21,7 +21,7 @@
       </div>
       
       <div class="header-controls">
-        <a href="mailto:info@makeberry.com">
+        <a href="#contact">
           <div class="header__button">
             <div class="button_text">Contact Us</div>
           </div>
@@ -48,16 +48,16 @@
           <span></span>
         </div>
         <div class="mobile-menu__items">
-          <div class="mobile-menu__item" @click="closeMenu($event)">
+          <div class="mobile-menu__item" @click="closeMenu">
             <router-link to="/" class="mobile-menu-link">product</router-link>
           </div>
-          <div class="mobile-menu__item" @click="closeMenu($event)">
+          <div class="mobile-menu__item" @click="closeMenu">
             <router-link to="/#about" class="mobile-menu-link">about</router-link>
           </div>
-          <div class="mobile-menu__item" @click="closeMenu($event)">
+          <div class="mobile-menu__item" @click="closeMenu">
             <router-link to="/hiring" class="mobile-menu-link">hiring</router-link>
           </div>
-          <div class="mobile-menu__item" @click="closeMenu($event)">
+          <div class="mobile-menu__item" @click="closeMenu">
             <router-link to="/blog" class="mobile-menu-link">blog</router-link>
           </div>
         </div>
@@ -68,9 +68,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
 
-const router = useRouter();
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
@@ -79,7 +77,7 @@ const toggleMenu = () => {
   document.body.style.overflow = isMenuOpen.value ? 'hidden' : '';
 };
 
-const closeMenu = (e?: MouseEvent) => {
+const closeMenu = () => {
   isMenuOpen.value = false;
   document.body.style.overflow = '';
 };

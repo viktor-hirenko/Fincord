@@ -117,7 +117,7 @@
 }
 
 .desktop_button:hover {
-  background: #C9B36E;
+  background: #FFF;
   color: #000;
 }
 
