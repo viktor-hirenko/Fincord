@@ -234,24 +234,23 @@ onUnmounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  width: 1216px;
+  width: auto;
   left: 50%;
   transform: translateX(-50%);
   height: 1088px;
   z-index: 1;
   transform-origin: top;
   @media screen and (max-width: 1250px) {
-    transform: scale(0.9) translateX(-55%);
+    transform: scale(0.9) translateX(-50%);
   }
   @media screen and (max-width: 1100px) {
-    transform: scale(0.8) translateX(-60%);
+    transform: scale(0.8) translateX(-50%);
   }
   @media screen and (max-width: 1024px) {
-    transform: scale(0.7) translateX(-65%);
+    transform: scale(0.7) translateX(-50%);
   }
   @media screen and (max-width: 959px) {
-    transform: scale(0.6) translateX(-70%);
+    transform: scale(0.6) translateX(-50%);
   }
 }
 
@@ -373,17 +372,18 @@ onUnmounted(() => {
   &:hover {
     background: #C9B36E;
     color: #000;
+    
+    .arrow_icon {
+      fill: #000;
+    }
   }
 }
 
 .arrow_icon {
   position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: 1.15rem;
+  right: 1.15rem;
   fill: #C9B36E;
   transition: all 0.3s ease;
-  &:hover {
-    fill: #000;
-  }
 }
 </style>
