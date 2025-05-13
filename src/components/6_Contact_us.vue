@@ -1,5 +1,11 @@
 <template>
   <section id="contact" class="contact_us">
+    <div class="contact_img_wrapper">
+      <img src="/img/lines_contact.svg"  class="lines img1" alt="">
+      <img src="/img/lines_contact.svg"  class="lines img2" alt="">
+      <img src="/img/contact.svg" v-lazy-animate="{delay: 100}" class="contact_img" alt="">
+
+    </div>
     <div class="contact_wrapper">
       <div v-if="!formSubmitted">
         <h2>GET IN TOUCH AND RECEIVE QUOTA FOR YOUR BUSINESS</h2>
@@ -171,7 +177,7 @@ const submitForm = () => {
   width: 100%;
   padding: 4rem 0;
   color: #fff;
-  // background-color: #000;
+  min-height: 40rem;
 }
 
 .contact_wrapper {
@@ -407,4 +413,45 @@ h2 {
     color: #fff;
   }
 }
+
+.contact_img_wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: scale(var(--scale-value)) translateX(-50%);
+  width: auto;
+  height: 500px;
+  z-index: 0;
+}
+
+.contact_img {
+  position: absolute;
+  top: 240px;
+  left: -604px;
+  width: 1210px;
+  height: 168px;
+}
+
+.lines {
+  position: absolute;
+  height: 400px;
+  width: auto;
+  z-index: 0;
+  top: 150px;
+}
+
+.lines.img1 {
+  left: -780px;
+  transform: perspective(500px) rotateY(55deg);
+
+}
+
+.lines.img2 {
+  left: 150px;
+  transform: perspective(500px) rotateY(-55deg) rotateZ(180deg);
+}
+
+
+
+
 </style>

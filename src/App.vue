@@ -1,5 +1,4 @@
 <template>
-  <img src="/img/ref.png" alt="" class="ref">
   <div class="main_wrapper">
     <Header />
     <HeroSection />

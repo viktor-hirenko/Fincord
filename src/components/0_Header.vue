@@ -118,7 +118,9 @@ const closeMenu = (e?: MouseEvent) => {
   height: 6.25rem;
   justify-content: space-between;
   align-items: center;
-  // background: #0F0F0F;
+  background: #000000d4;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
