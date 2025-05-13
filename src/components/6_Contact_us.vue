@@ -406,6 +406,7 @@ h2 {
   
   h2 {
     margin-bottom: 1rem;
+    margin-top: 10rem;
   }
   
   p {
