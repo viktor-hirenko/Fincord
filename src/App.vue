@@ -1,59 +1,21 @@
 <template>
-  <div class="main_wrapper">
+  <div class="app-container">
     <Header />
-    <HeroSection />
-    <AboutUs />
-    <ContactUs />
-    <Footer  />
+    <router-view />
   </div>
   <div class="noise"></div>
 </template>
 
 <script setup lang="ts">
 import Header from './components/0_Header.vue'
-import HeroSection from './components/1_HeroSection.vue'
-import AboutUs from './components/2_About_us.vue'
-import ContactUs from './components/6_Contact_us.vue'
-import Footer from './components/7_Footer.vue'
 import { onMounted, ref } from 'vue'
 
-const link = ref('https://winspirit3.com/registration');
 function adjustScale(): void {
   const vh = Math.round(window.innerHeight / 100)
   document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
-// Глобальный обработчик для всех якорных ссылок
-function setupAnchorLinks(): void {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(this: HTMLAnchorElement, e) {
-      e.preventDefault();
-      
-      const href = this.getAttribute('href');
-      if (!href) return;
-      
-      const targetId = href.substring(1);
-      if (!targetId) return;
-      
-      const targetElement = document.getElementById(targetId);
-      if (!targetElement) return;
-      
-      // Получаем верхнюю позицию элемента с учетом прокрутки
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-      
-      // Увеличиваем смещение до 100px для компенсации хедера
-      const offsetPosition = targetPosition - 50;
-      
-      // Скроллим с анимацией к скорректированной позиции
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    });
-  });
-}
-
-// Функция для обработки скролла к элементу по id
+// Функция для скролла к элементу по id
 function scrollToElement(id: string): void {
   const targetElement = document.getElementById(id);
   if (!targetElement) return;
@@ -74,22 +36,11 @@ function scrollToElement(id: string): void {
 onMounted(() => {
   window.addEventListener('DOMContentLoaded', adjustScale);
   
-  // Настройка якорных ссылок
-  setupAnchorLinks();
-  
   // Обработка хеша URL при загрузке страницы
   if (window.location.hash) {
     const hash = window.location.hash.substring(1);
     scrollToElement(hash);
   }
-  
-  // Прослушивание изменения хеша URL
-  window.addEventListener('hashchange', () => {
-    if (window.location.hash) {
-      const hash = window.location.hash.substring(1);
-      scrollToElement(hash);
-    }
-  });
   
   const preloader = document.getElementById('preloader_bg')
   const time = 0;
@@ -97,10 +48,6 @@ onMounted(() => {
     setTimeout(() => {
       preloader.style.display = 'none'
     }, time);
-  }
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has("link")) {
-    link.value = urlParams.get("link") as string;
   }
 
   // Устанавливаем стили для предотвращения нежелательного скролла
@@ -130,30 +77,9 @@ onMounted(() => {
   }
 }
 
-.ref {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1440px;
-  height: auto;
-  z-index: -10;
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
-}
-
-.ref_mobile {
-  display: none;
-  @media screen and (max-width: 900px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 360px;
-    height: auto;
-  }
+.app-container {
+  position: relative;
+  width: 100%;
 }
 
 .main_wrapper {
@@ -304,8 +230,5 @@ section {
   background-repeat: repeat;
   mix-blend-mode: color-burn;
   pointer-events: none;
-
 }
-
-
 </style>

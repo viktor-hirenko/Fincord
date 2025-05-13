@@ -53,22 +53,22 @@
           </div>
         </div>
         <div class="buttons_wrapper">
-        <a href="/" class="cta_button">
+        <router-link to="/#contact" class="cta_button">
           <div class="button_cotainer">
             Get in touch
             <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
 <path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z"/>
 </svg>
           </div>
-        </a>
-        <a href="/" class="cta_button">
+        </router-link>
+        <router-link to="/hiring" class="cta_button">
           <div class="button_cotainer">
             we are hiring
             <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
 <path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z"/>
 </svg>
           </div>
-        </a>
+        </router-link>
       </div>
       </div>
       <div class="hero_img_wrapper wap_img_2">
@@ -86,7 +86,7 @@ above and beyond specific industry or geogrphy
         <br> <br>
 Our connections with an extensive global network of payment method providers brings flexibility multiplied by worldwide coverage.
       </div>
-      <div class="hero_cta_button">Get in touch</div>
+      <router-link to="/#contact" class="hero_cta_button">Get in touch</router-link>
     </div>
     </div>
   </section>
@@ -355,6 +355,7 @@ onUnmounted(() => {
 .cta_button {
   position: relative;
   width: 100%;
+  text-decoration: none;
 }
 
 .button_cotainer {
@@ -464,11 +465,12 @@ onUnmounted(() => {
   transition: all 0.3s ease;
   margin-left: 12.5rem;
   margin-top: 4.25rem;
+  display: inline-block;
+  text-decoration: none;
   &:hover {
     background: #C9B36E;
     color: #000;
   }
-
 }
 
 .map_img {

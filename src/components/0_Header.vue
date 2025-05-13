@@ -1,23 +1,22 @@
 <template>
   <div class="header">
     <div class="header_wrapper">
-      <a href="#home">
-      <img src="/img/logo.svg" alt="Makeberry" 
-      class="header__logo"/>
-      </a>
+      <router-link to="/">
+        <img src="/img/logo.svg" alt="Makeberry" class="header__logo"/>
+      </router-link>
       <!-- Десктопное меню -->
       <div class="menu_wrapper">
         <div class="menu_item">
-          <a href="#home">product</a>
+          <router-link to="/" class="menu-link">product</router-link>
         </div>
         <div class="menu_item">
-          <a href="#about">about</a>
+          <router-link to="/#about" class="menu-link">about</router-link>
         </div>
         <div class="menu_item">
-          <a href="#services">hiring</a>
+          <router-link to="/hiring" class="menu-link">hiring</router-link>
         </div>
         <div class="menu_item">
-          <a href="#experience">blog</a>
+          <router-link to="/blog" class="menu-link">blog</router-link>
         </div>
       </div>
       
@@ -50,16 +49,16 @@
         </div>
         <div class="mobile-menu__items">
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#home">product</a>
+            <router-link to="/" class="mobile-menu-link">product</router-link>
           </div>
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#about">about</a>
+            <router-link to="/#about" class="mobile-menu-link">about</router-link>
           </div>
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#services">hiring</a>
+            <router-link to="/hiring" class="mobile-menu-link">hiring</router-link>
           </div>
           <div class="mobile-menu__item" @click="closeMenu($event)">
-            <a href="#experience">blog</a>
+            <router-link to="/blog" class="mobile-menu-link">blog</router-link>
           </div>
         </div>
       </div>
@@ -69,7 +68,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
@@ -81,30 +82,6 @@ const toggleMenu = () => {
 const closeMenu = (e?: MouseEvent) => {
   isMenuOpen.value = false;
   document.body.style.overflow = '';
-  
-  // Проверяем, был ли клик по якорной ссылке внутри мобильного меню
-  if (e && e.target instanceof HTMLElement) {
-    const closestAnchor = e.target.closest('a[href^="#"]');
-    if (closestAnchor && closestAnchor instanceof HTMLAnchorElement) {
-      // Даем время для закрытия меню перед скроллом
-      setTimeout(() => {
-        const targetId = closestAnchor.getAttribute('href')?.substring(1);
-        if (!targetId) return;
-        
-        const targetElement = document.getElementById(targetId);
-        if (!targetElement) return;
-        
-        // Получаем позицию элемента и корректируем её с учетом хедера
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = targetPosition - 100;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }, 100);
-    }
-  }
 };
 </script>
 
@@ -203,7 +180,6 @@ const closeMenu = (e?: MouseEvent) => {
 }
 
 .menu_item {
-  color: #fff;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -211,8 +187,14 @@ const closeMenu = (e?: MouseEvent) => {
   cursor: pointer;
 }
 
-.menu_item:hover {
-  color: #C9B36E;
+.menu-link {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.menu-link:hover, 
+.menu-link.router-link-exact-active {
+  color: #C9B36E !important;
 }
 
 /* Гамбургер меню */
@@ -321,19 +303,19 @@ const closeMenu = (e?: MouseEvent) => {
 }
 
 .mobile-menu__item {
-  color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  &:hover {
-    color: #C9B36E;
-  }
+}
+
+.mobile-menu-link {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.router-link-exact-active {
+  color: #C9B36E !important;
 }
 
 .mobile-menu__button {

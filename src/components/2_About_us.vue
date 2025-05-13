@@ -4,7 +4,7 @@
       <div class="about_us_titles_wrapper">
         <div class="about_us_title">PAYMENT SOLUTIONS TUNED WITH YOU IN MIND</div>
         <div class="about_us_subtitle">People-first approach is <br> the foundation of our work.</div>
-        <div class="desktop_button">Get in touch</div>
+        <router-link to="/#contact" class="desktop_button">Get in touch</router-link>
       </div>
       <div class="text_about_us_wrapper">
         <div class="text_about_us_title">
@@ -112,6 +112,8 @@
   margin-left: 5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
 }
 
 .desktop_button:hover {

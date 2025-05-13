@@ -1,10 +1,8 @@
 <template>
   <div class="footer">
     <div class="footer_wrapper">
-      <div class="footer_text">Privacy Policy</div>
-      <div class="footer_text">Cookie Policy</div>
-      
-    
+      <router-link to="/privacy-policy" class="footer_text">Privacy Policy</router-link>
+      <router-link to="/cookie-policy" class="footer_text">Cookie Policy</router-link>
     </div>
   </div>
 </template>
@@ -52,11 +50,12 @@
   line-height: normal;
   margin-right: 3rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .footer_text:hover {
   color: #000;
+  text-decoration: underline;
 }
-
 
 </style>
