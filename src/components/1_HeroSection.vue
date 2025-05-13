@@ -253,22 +253,10 @@ onUnmounted(() => {
   left: 0;
   width: auto;
   left: 50%;
-  transform: translateX(-50%);
+  transform: scale(var(--scale-value)) translateX(-50%);
   height: 1088px;
   z-index: 1;
   transform-origin: top;
-  @media screen and (max-width: 1250px) {
-    transform: scale(0.9) translateX(-50%);
-  }
-  @media screen and (max-width: 1100px) {
-    transform: scale(0.8) translateX(-50%);
-  }
-  @media screen and (max-width: 1024px) {
-    transform: scale(0.7) translateX(-50%);
-  }
-  @media screen and (max-width: 959px) {
-    transform: scale(0.6) translateX(-50%);
-  }
 }
 
 .hero_content_wrapper {
