@@ -57,7 +57,7 @@
           <div class="button_cotainer">
             Get in touch
             <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-<path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z" fill="#C9B36E"/>
+<path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z"/>
 </svg>
           </div>
         </a>
@@ -65,7 +65,7 @@
           <div class="button_cotainer">
             we are hiring
             <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-<path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z" fill="#C9B36E"/>
+<path d="M22 22L22 0H19.4017L19.4017 17.2815L3.14653 1.02631L1.02521 3.14763L17.2793 19.4017L6.74348e-07 19.4017L0 22L22 22Z"/>
 </svg>
           </div>
         </a>
@@ -380,5 +380,10 @@ onUnmounted(() => {
   position: absolute;
   bottom: 1.25rem;
   right: 1.25rem;
+  fill: #C9B36E;
+  transition: all 0.3s ease;
+  &:hover {
+    fill: #000;
+  }
 }
 </style>
