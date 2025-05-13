@@ -13,7 +13,7 @@ the foundation of our work.
       
     </div>
 
-<div class="noise"></div>
+
   </section>
 </template>
 

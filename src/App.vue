@@ -10,6 +10,7 @@
     <ContactUs />
     <Footer  />
   </div>
+  <div class="noise"></div>
 </template>
 
 <script setup lang="ts">
@@ -295,18 +296,19 @@ section {
   }
 
   .noise {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 1000;
   background-image: url('/img/noise.svg');
-  background-size: 6.25rem;
+  background-size: 100px;
   background-position: center;
   background-repeat: repeat;
   mix-blend-mode: color-burn;
   pointer-events: none;
+
 }
 
 

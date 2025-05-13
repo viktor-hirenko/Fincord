@@ -89,7 +89,6 @@ Our connections with an extensive global network of payment method providers bri
       <div class="hero_cta_button">Get in touch</div>
     </div>
     </div>
-    <div class="noise"></div>
   </section>
 </template>
 
