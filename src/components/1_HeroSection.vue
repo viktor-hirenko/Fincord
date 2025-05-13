@@ -55,14 +55,28 @@
             </div>
         
           </div>
-          <div class="divider"></div>
+          
         </div>
+
+        
         
 
 
 
 
       </div>
+      <div class="buttons_wrapper">
+          <a href="/" class="cta_button">
+            <div class="button_cotainer">
+              Get in touch
+            </div>
+          </a>
+          <a href="/" class="cta_button">
+            <div class="button_cotainer">
+              we are hiring
+            </div>
+          </a>
+        </div>
       
     </div>
 
@@ -159,8 +173,6 @@ onUnmounted(() => {
   position: relative;
   max-width: 90rem;
   width: 100%;
-  display: flex;
-  justify-content: center;
   z-index: 1;
   @media screen and (max-width: 959px) {
     top: 0;
@@ -296,7 +308,15 @@ onUnmounted(() => {
   font-weight: 700;
   line-height: 130%;
   text-transform: uppercase;
+  width: 16rem;
 }
+
+.service_item:nth-child(n+2) .service_item_title {
+  margin-top: 1.5rem;
+}
+
+
+
 
 .service_item_description {
   position: relative;
@@ -305,10 +325,14 @@ onUnmounted(() => {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-left: 15.25rem;
+  margin-left: 9.75rem;
   max-width: 16rem;
   margin-top: .75rem;
   line-height: 130%;
+}
+
+.service_item:nth-child(n+2) .service_item_description {
+  margin-top: 2.1rem;
 }
 
 .divider {
@@ -320,5 +344,30 @@ onUnmounted(() => {
     background: #C9B36E;
     margin-top: 2rem;
 }
+
+.buttons_wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.cta_button {
+  position: relative;
+  width: 100%;
+}
+
+.button_cotainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+  max-width: 27.3rem;
+  height: 9.9rem;
+  border: 3px solid rgba(201, 179, 110, 0.30);
+
+}
+
 
 </style>
