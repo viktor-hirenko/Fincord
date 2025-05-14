@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header_wrapper">
       <router-link to="/">
-        <img src="/img/logo.svg" alt="Makeberry" class="header__logo"/>
+        <img src="/img/logo.svg" alt="Fincord" class="header__logo"/>
       </router-link>
       <!-- Десктопное меню -->
       <div class="menu_wrapper">
@@ -23,7 +23,7 @@
       <div class="header-controls">
         <a href="#contact">
           <div class="header__button">
-            <div class="button_text">Contact Us</div>
+            <div class="button_text">Get in touch</div>
           </div>
         </a>
         
@@ -43,6 +43,7 @@
     
     <Transition name="menu-slide">
       <div class="mobile-menu" v-if="isMenuOpen">
+        <img src="/img/logo.svg" alt="Fincord" class="mobile-menu__logo"/>
         <div class="mobile-menu__close" @click="closeMenu">
           <span></span>
           <span></span>
@@ -61,6 +62,11 @@
             <router-link to="/blog" class="mobile-menu-link">blog</router-link>
           </div>
         </div>
+        <a href="#contact" @click="closeMenu">
+          <div class="header__button mobile-menu__button">
+            <div class="button_text">Get in touch</div>
+          </div>
+        </a>
       </div>
     </Transition>
   </div>
@@ -97,6 +103,9 @@ const closeMenu = () => {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
+  @media screen and (max-width: 768px) {
+    height: 52px;
+  }
 }
 
 .header_wrapper {
@@ -121,8 +130,10 @@ const closeMenu = () => {
   flex-shrink: 0;
   position: relative;
   cursor: pointer;
-  @media screen and (max-width: 1000px) {
-    margin-left: 0;
+  @media screen and (max-width: 768px) {
+    margin-left: 0.5rem;
+    width: 5.25rem;
+    height: 0.92rem;
   }
 }
 
@@ -136,11 +147,8 @@ const closeMenu = () => {
   align-items: center;
   gap: 0.5rem;
   background: #F2F2F2;
-  @media screen and (max-width: 1000px) {
-    margin-right: 1rem;
-  }
-  @media screen and (max-width: 959px) {
-    margin-right: 1rem;
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -157,9 +165,6 @@ const closeMenu = () => {
   font-weight: 600;
   line-height: normal;
   white-space: nowrap;
-  @media screen and (max-width: 959px) {
-    font-size: 0.95rem;
-  }
 }
 
 .menu_wrapper {
@@ -169,10 +174,7 @@ const closeMenu = () => {
   position: relative;
   margin-left: 3rem;
   margin-right: auto;
-  @media screen and (max-width: 1100px) {
-    gap: 2rem;
-  }
-  @media screen and (max-width: 959px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 }
@@ -201,23 +203,27 @@ const closeMenu = () => {
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 20px;
+  height: 12px;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   position: relative;
   z-index: 1100;
   
-  @media screen and (max-width: 959px) {
+  @media screen and (max-width: 768px) {
     display: flex;
   }
   
   span {
     width: 100%;
-    height: 3px;
+    height: 1px;
     background-color: #fff;
-    border-radius: 3px;
     transition: all 0.3s ease;
   }
+  span:nth-child(2) {
+    width: 40%;
+    margin-left: 60%;
+  }
+
   
   &.is-active {
     span:nth-child(1) {
@@ -268,10 +274,10 @@ const closeMenu = () => {
 
 .mobile-menu__close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 30px;
-  height: 30px;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -280,9 +286,8 @@ const closeMenu = () => {
   span {
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #fff;
-    border-radius: 3px;
     
     &:nth-child(1) {
       transform: rotate(45deg);
@@ -298,37 +303,27 @@ const closeMenu = () => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
 }
 
 .mobile-menu__item {
   font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 400;
 }
 
 .mobile-menu-link {
-  color: #fff !important;
+  color: #fff;
   text-decoration: none;
 }
 
-.mobile-menu-link:hover,
-.mobile-menu-link.router-link-exact-active {
-  color: #C9B36E !important;
+.mobile-menu-link:hover {
+  color: #C9B36E;
 }
 
-.mobile-menu__button {
-  margin-top: 2rem;
-  display: flex;
-  padding: 0.55rem 1.25rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5.5rem;
-  background: linear-gradient(90deg, #BB01FF 0%, #8501FF 100%);
-  
-  &:hover {
-    background: #C9B36E;
-  }
-}
+
 
 /* Анимации */
 .menu-fade-enter-active,
@@ -354,4 +349,23 @@ const closeMenu = () => {
 a {
   text-decoration: none;
 }
+
+.mobile-menu__logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 5.25rem;
+  height: 0.92163rem;
+}
+
+.mobile-menu__button {
+  position: absolute;
+  display: flex;
+  bottom: 8.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+}
+
+
 </style>

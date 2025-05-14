@@ -64,16 +64,21 @@ onMounted(() => {
   font-size: 16px;
   --scale-value: 1;
   
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1300px) {
     font-size: 14px; 
     --scale-value: 0.88;
   }
-  @media screen and (max-width: 1000px) {
-    font-size: 13px;
-    --scale-value: 0.8;
+  @media screen and (max-width: 1100px) {
+    font-size: 12px;
+    --scale-value: 0.75;
   }
   @media screen and (max-width: 959px) {
-    font-size: 15px; 
+    font-size: 10px;
+    --scale-value: 0.6;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    --scale-value: 0.3;
   }
 }
 

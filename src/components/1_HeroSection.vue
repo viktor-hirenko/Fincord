@@ -11,6 +11,7 @@
         <div class="hero_counter">{{ formattedCounter }}</div>
         <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
       </div>
+      
       <div class="hero_content_wrapper">
         <div class="hero_title">
           Talk to us about:
@@ -71,9 +72,11 @@
         </router-link>
       </div>
       </div>
+      <div class="img_2_container">
       <div class="hero_img_wrapper wap_img_2">
       <img src="/img/hero_img1.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
       <img src="/img/line1.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img line_1">
+    </div>
     </div>
     <div class="hero_cta">
       <img src="/img/map.webp" alt="" class="map_img">
@@ -196,6 +199,10 @@ onUnmounted(() => {
   left: 50%;
   top: 30.4rem;
   transform: translateX(85%);
+  @media screen and (max-width: 768px) {
+    top: 14.5em;
+    transform: translateX(0%);
+  }
 }
 
 
@@ -210,6 +217,9 @@ onUnmounted(() => {
   text-align: left;
   width: 16rem;
   z-index: 10;
+  @media screen and (max-width: 768px) {
+    font-size: 2.6rem;
+  }
 }
 
 .hero_counter_description {
@@ -222,6 +232,9 @@ onUnmounted(() => {
   text-align: left;
   z-index: 1;
   margin-top: 0.6rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.625rem;
+  }
 }
 
 
@@ -257,6 +270,9 @@ onUnmounted(() => {
   height: 1088px;
   z-index: 1;
   transform-origin: top;
+  @media screen and (max-width: 768px) {
+    margin-top: 3rem;
+  }
 }
 
 .hero_content_wrapper {
@@ -394,27 +410,38 @@ onUnmounted(() => {
 }
 
 .wap_img_2 {
-  position: relative;
-  margin-top: 5rem;
+  position: absolute;
+  margin-top: 4rem;
   height: 800px;
+  width: auto;
+  transform-origin: top center;
+  transform: scale(var(--scale-value)) translateX(-50%);
+  
   
 }
 
 .line_1 {
+  position: absolute;
   transform: perspective(600px) rotateX(52deg);
-  left: 0;
+  left: -716px;
   width: 1000px;
   height: auto;
   top: 141px;
   margin-left: 216px;
 }
 
-.img_2 {
-  position: relative;
+.img_2 {  
+  position: absolute;
   margin-top: 25px;
   width: 1057px;
   height: 251px;
 
+}
+
+.img_2_container {
+  position: relative;
+  width: 100%;
+  height: 53rem;
 }
 
 .hero_cta {
