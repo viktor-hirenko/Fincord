@@ -375,7 +375,20 @@ h2 {
     }
     
     input[type="radio"]:checked + label:before {
-      background-color: #C9B36E;
+      background-color: transparent;
+      border-color: #C9B36E;
+    }
+    
+    input[type="radio"]:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 0.9rem;
+      top: 1.1rem;
+      width: 0.2rem;
+      height: 0.5rem;
+      border: solid #C9B36E;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
     }
   }
 }
