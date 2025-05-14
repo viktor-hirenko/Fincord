@@ -3,7 +3,7 @@
     <Header />
     <router-view />
   </div>
-  <div class="noise"></div>
+  
 </template>
 
 <script setup lang="ts">
@@ -244,17 +244,20 @@ section {
   }
 
   .noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background-image: url('/img/noise.svg');
-  background-size: 100px;
-  background-position: center;
-  background-repeat: repeat;
-  mix-blend-mode: color-burn;
-  pointer-events: none;
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url('/img/noise.svg');
+    background-size: 100px;
+    background-position: center;
+    background-repeat: repeat;
+    mix-blend-mode: color-burn;
+    pointer-events: none;
+  }
+
+  /* Специфические стили для Safari */
+
 </style>

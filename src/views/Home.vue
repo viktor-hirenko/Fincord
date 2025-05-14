@@ -5,7 +5,6 @@
     <ContactUs />
     <Footer  />
   </div>
-  <div class="noise"></div>
 </template>
 
 <script setup lang="ts">

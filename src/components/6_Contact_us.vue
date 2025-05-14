@@ -3,10 +3,10 @@
     <div class="contact_img_wrapper">
       <img src="/img/lines_contact.svg"  class="lines img1" alt="">
       <img src="/img/lines_contact.svg"  class="lines img2" alt="">
-      <img src="/img/contact.svg" v-lazy-animate="{delay: 100}" class="contact_img" alt="">
+      <img src="/img/contact.svg?v1" v-lazy-animate="{delay: 100}" class="contact_img" alt="">
 
     </div>
-    <img src="/img/contact_img_mobile.svg" class="contact_img_mobile" alt="">
+    <img src="/img/contact_img_mobile.svg?v1" class="contact_img_mobile" alt="">
     <div class="contact_wrapper">
       <div v-if="!formSubmitted">
         <h2>GET IN TOUCH AND RECEIVE <br class="mobile_br"> QUOTA FOR YOUR BUSINESS</h2>

@@ -155,7 +155,7 @@
     position: relative;
     color: #C9B36E;
     text-align: center;
-    font-size: 1.4625rem;
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

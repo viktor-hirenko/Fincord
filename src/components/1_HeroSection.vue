@@ -1,7 +1,7 @@
 <template>
   <section id="home" class="hero">
     <div class="hero_img_wrapper">
-      <img src="/img/hero_img.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
+      <img src="/img/hero_img.svg?v1" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
       <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
     </div>
 
@@ -85,7 +85,7 @@
       </div>
       <div class="img_2_container">
       <div class="hero_img_wrapper wap_img_2">
-      <img src="/img/hero_img1.svg" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
+      <img src="/img/hero_img1.svg?v1" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
       <img src="/img/line1.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img line_1">
     </div>
     </div>
@@ -615,6 +615,8 @@ onUnmounted(() => {
   width: calc(100% - 5.2rem);
   margin-top: 4rem;
 }
+
+
 
 
 
