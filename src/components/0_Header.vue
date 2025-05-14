@@ -220,8 +220,8 @@ const closeMenu = () => {
     transition: all 0.3s ease;
   }
   span:nth-child(2) {
-    width: 40%;
-    margin-left: 60%;
+    width: 50%;
+    margin-left: 50%;
   }
 }
 

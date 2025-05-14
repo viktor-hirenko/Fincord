@@ -254,6 +254,9 @@ h2 {
   gap: 1.5rem;
   margin-bottom: 2rem;
   font-size: 0.875rem;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .error-message {
@@ -287,6 +290,9 @@ h2 {
     color: #fff;
     border-radius: 0;
     font-size: 1rem;
+    @media screen and (max-width: 768px) {
+      font-size: 0.75rem;
+    }
     
     &::placeholder {
       color: rgba(0, 0, 0, 0.60);
@@ -368,6 +374,10 @@ h2 {
       margin: 0;
       height: 2rem;
       white-space: nowrap;
+      @media screen and (max-width: 768px) {
+        font-size: 0.75rem !important;
+        color: rgba(0, 0, 0, 0.60)
+      }
       
       &:before {
         content: '';
@@ -453,6 +463,10 @@ h2 {
   font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 3rem;
+    font-size: 0.875rem;
+  }
   
   &:hover {
     background-color: #ffffff;
@@ -513,11 +527,13 @@ h2 {
 .lines.img1 {
   left: -780px;
   transform: perspective(500px) rotateY(55deg);
+  -webkit-transform: perspective(500px) rotateY(55deg);
 }
 
 .lines.img2 {
   left: 150px;
   transform: perspective(500px) rotateY(-55deg) rotateZ(180deg);
+  -webkit-transform: perspective(500px) rotateY(-55deg) rotateZ(180deg);
 }
 
 .contact_img_mobile {
@@ -537,6 +553,12 @@ h2 {
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
+  }
+}
+
+.form_field label {
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
   }
 }
 

@@ -23,6 +23,9 @@
   align-items: center;
   background: #C9B36E;
   z-index: 1000;
+  @media screen and (max-width: 768px) {
+    height: 3.25rem;
+  }
 }
 
 .footer_wrapper {
@@ -39,6 +42,14 @@
     left: 5%;
     transform: none;
   }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    left: 5%;
+    transform: none;
+    display: flex;
+    justify-content: space-between;
+    max-width: unset;
+  }
 }
 
 .footer_text {
@@ -51,6 +62,10 @@
   margin-right: 3rem;
   cursor: pointer;
   text-decoration: none;
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
 }
 
 .footer_text:hover {

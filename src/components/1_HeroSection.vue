@@ -323,8 +323,8 @@ onUnmounted(() => {
   margin-top: .75rem;
   @media screen and (max-width: 768px) {
     margin-left: 1rem;
-    margin-bottom: 3rem;
-    margin-top: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 7rem;
   }
 }
 
@@ -476,6 +476,7 @@ onUnmounted(() => {
 .line_1 {
   position: absolute;
   transform: perspective(600px) rotateX(52deg);
+  -webkit-transform: perspective(600px) rotateX(52deg);
   left: -716px;
   width: 1000px;
   height: auto;

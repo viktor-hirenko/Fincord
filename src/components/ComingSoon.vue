@@ -22,7 +22,6 @@
   justify-content: center;
   align-items: center;
   min-height: calc(100vh); /* Вычитаем высоту хедера и футера */
-  padding: 2rem;
   background-color: #000;
   @supports (min-height: 100dvh) {
     min-height: calc(100dvh);
