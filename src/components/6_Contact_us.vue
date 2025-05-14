@@ -483,6 +483,9 @@ h2 {
 .thank_you {
   text-align: center;
   padding: 3rem 1rem;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
   
   h2 {
     margin-bottom: 1rem;
