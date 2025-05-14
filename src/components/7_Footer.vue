@@ -22,7 +22,6 @@
   justify-content: space-between;
   align-items: center;
   background: #C9B36E;
-  z-index: 1000;
   @media screen and (max-width: 768px) {
     height: 3.25rem;
   }
