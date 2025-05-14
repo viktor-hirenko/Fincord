@@ -9,6 +9,9 @@
 <script setup lang="ts">
 import Header from './components/0_Header.vue'
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 function adjustScale(): void {
   const vh = Math.round(window.innerHeight / 100)
@@ -32,6 +35,21 @@ function scrollToElement(id: string): void {
   }, 50);
 }
 
+// Обработка редиректа с параметра route
+function handleRouteParam(): void {
+  const urlParams = new URLSearchParams(window.location.search)
+  const routeParam = urlParams.get('route')
+  
+  if (routeParam) {
+    // Убираем параметр из URL без перезагрузки страницы
+    const newUrl = window.location.pathname
+    window.history.replaceState({}, document.title, newUrl)
+    
+    // Редиректим на нужный маршрут
+    router.push({ path: `/${routeParam}` })
+  }
+}
+
 // Скрытие прелоадера после монтирования компонента
 onMounted(() => {
   window.addEventListener('DOMContentLoaded', adjustScale);
@@ -41,6 +59,9 @@ onMounted(() => {
     const hash = window.location.hash.substring(1);
     scrollToElement(hash);
   }
+  
+  // Обработка параметра route 
+  handleRouteParam();
   
   const preloader = document.getElementById('preloader_bg')
   const time = 0;
