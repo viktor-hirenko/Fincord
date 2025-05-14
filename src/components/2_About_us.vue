@@ -31,6 +31,7 @@
         <div class="text_about_us_content">
           You are aware of everything that's going on, with instant access to a customized merchant portal.
         </div>
+        <router-link to="/#contact" class="mobile_button">Get in touch</router-link>
       </div>
     </div>
   </section>
@@ -51,6 +52,9 @@
   height: auto;
   background: #C9B36E;
   scroll-margin-top: 85px;
+  @media screen and (max-width: 768px) {
+    min-height: 58rem;
+  }
 }
 
 .about_us_wrapper {
@@ -61,6 +65,9 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .about_us_titles_wrapper {
@@ -70,6 +77,9 @@
   margin-top: 6rem;
   margin-left: 1rem;
   width: 100%;
+  @media screen and (max-width: 768px) {
+    margin-top: 4rem;
+  }
 }
 
 .about_us_title {
@@ -82,6 +92,9 @@
   text-transform: uppercase;
   max-width: 40rem;
   line-height: 130%;
+  @media screen and (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 }
 
 .about_us_subtitle {
@@ -95,6 +108,16 @@
   margin-left: 5rem;
   max-width: 18rem;
   line-height: 130%;
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+    margin-right: 2rem;
+    text-align: left;
+    max-width: unset;
+    width: fit-content;
+    margin-left: auto;
+    right: 0;
+    left: unset;
+  }
 }
 
 .desktop_button {
@@ -114,12 +137,47 @@
   transition: all 0.3s ease;
   display: block;
   text-decoration: none;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .desktop_button:hover {
   background: #FFF;
   color: #000;
 }
+
+.mobile_button {
+  display: none;
+  @media screen and (max-width: 768px) {
+    width: calc(100% - 2rem);
+    display: block;
+    position: relative;
+    color: #C9B36E;
+    text-align: center;
+    font-size: 1.4625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: #000;
+    padding: 0.75rem 0;
+    margin-top: 4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+  }
+}
+
+.mobile_button:hover {
+  background: #FFF;
+  color: #000;
+}
+
+
+
+
+
 
 .text_about_us_wrapper {
   position: relative;
@@ -128,6 +186,10 @@
   margin-top: 6rem;
   margin-left: 1rem;
   width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 
 .text_about_us_title {
@@ -140,6 +202,9 @@
   text-transform: uppercase;
   margin-top: 1.5rem;
   max-width: 18rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
 
 .text_about_us_title:nth-child(n+2) {
@@ -156,6 +221,11 @@
   margin-top: 1.35rem;
   max-width: 20rem;
   line-height: 130%;
+  @media screen and (max-width: 768px) {
+    max-width: unset;
+    margin-right: 2rem;
+    font-size: 0.75rem;
+  }
 }
 
 .desktop_br {

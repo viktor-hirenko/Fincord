@@ -6,9 +6,10 @@
       <img src="/img/contact.svg" v-lazy-animate="{delay: 100}" class="contact_img" alt="">
 
     </div>
+    <img src="/img/contact_img_mobile.svg" class="contact_img_mobile" alt="">
     <div class="contact_wrapper">
       <div v-if="!formSubmitted">
-        <h2>GET IN TOUCH AND RECEIVE QUOTA FOR YOUR BUSINESS</h2>
+        <h2>GET IN TOUCH AND RECEIVE <br class="mobile_br"> QUOTA FOR YOUR BUSINESS</h2>
         
         <div class="form_grid">
           <div class="form_field">
@@ -214,6 +215,9 @@ const submitForm = () => {
   padding: 4rem 0;
   color: #fff;
   min-height: 40rem;
+  @media screen and (max-width: 768px) {
+    padding: 2rem 0;
+  }
 }
 
 .contact_wrapper {
@@ -236,6 +240,11 @@ h2 {
   color: #C9B36E;
   font-weight: 700;
   white-space: nowrap;
+  @media screen and (max-width: 768px) {
+    white-space: wrap;
+    font-size: 1rem;
+    margin-top: 4rem;
+  }
 }
 
 .form_grid {
@@ -480,6 +489,9 @@ h2 {
   width: auto;
   height: 500px;
   z-index: 0;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .contact_img {
@@ -507,4 +519,26 @@ h2 {
   left: 150px;
   transform: perspective(500px) rotateY(-55deg) rotateZ(180deg);
 }
+
+.contact_img_mobile {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    height: auto;
+  }
+}
+
+
+.mobile_br {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+
 </style>

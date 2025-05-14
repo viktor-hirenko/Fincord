@@ -12,7 +12,13 @@
         <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
       </div>
       
+
       <div class="hero_content_wrapper">
+        <a href="#contact">
+          <div class="mobile-menu__button">
+            Get in touch
+          </div>
+        </a>
         <div class="hero_title">
           Talk to us about:
         </div>
@@ -52,6 +58,11 @@
               We help create and implement robust compliance policies and procedures tailored to specific regulatory requirements and industry best practices.
             </div>
           </div>
+          <a href="#contact">
+          <div class="mobile-menu__button mobile-menu__button_second">
+            Get in touch
+          </div>
+        </a>
         </div>
         <div class="buttons_wrapper">
         <router-link to="/#contact" class="cta_button">
@@ -89,7 +100,11 @@ above and beyond specific industry or geogrphy
         <br> <br>
 Our connections with an extensive global network of payment method providers brings flexibility multiplied by worldwide coverage.
       </div>
-      <router-link to="/#contact" class="hero_cta_button">Get in touch</router-link>
+      <a href="#contact">
+          <div class="mobile-menu__button mobile-menu__button_third">
+            Get in touch
+          </div>
+        </a>
     </div>
     </div>
   </section>
@@ -178,6 +193,9 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   min-height: 223.4rem;
+  @media screen and (max-width: 768px) {
+    min-height: 187rem;
+  }
 }
 
 .hero_wrapper {
@@ -282,6 +300,12 @@ onUnmounted(() => {
   flex-wrap: wrap;
   flex-direction: row;
   margin-top: 47rem;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 25rem;
+    overflow: hidden;
+  }
 }
 
 .hero_title {
@@ -297,6 +321,11 @@ onUnmounted(() => {
   width: 12rem;
   white-space: nowrap;
   margin-top: .75rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+  }
 }
 
 .services_list {
@@ -304,12 +333,18 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   margin-left: 13.25rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 1rem;
+  }
 }
 
 .service_item {
   position: relative;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .service_item_title {
@@ -341,6 +376,9 @@ onUnmounted(() => {
   max-width: 16rem;
   margin-top: .75rem;
   line-height: 130%;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 }
 
 .service_item:nth-child(n+2) .service_item_description {
@@ -355,6 +393,10 @@ onUnmounted(() => {
     opacity: 0.3;
     background: #C9B36E;
     margin-top: 2rem;
+    @media screen and (max-width: 768px) {
+      left: 0;
+      width: 100%;
+    }
 }
 
 .buttons_wrapper {
@@ -366,6 +408,11 @@ onUnmounted(() => {
   margin-left: 14.2rem;
   margin-top: 10.5rem;
   max-width: 60.5rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 4rem;
+    flex-direction: column;
+  }
 }
 
 .cta_button {
@@ -398,6 +445,12 @@ onUnmounted(() => {
     .arrow_icon {
       fill: #000;
     }
+  }
+  @media screen and (max-width: 768px) {
+    width: calc(100% - 7.25rem);
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
 
@@ -442,6 +495,9 @@ onUnmounted(() => {
   position: relative;
   width: 100%;
   height: 53rem;
+  @media screen and (max-width: 768px) {
+    height: 23rem;
+  }
 }
 
 .hero_cta {
@@ -461,6 +517,10 @@ onUnmounted(() => {
   line-height: 130%;
   max-width: 51rem;
   margin-left: 7.25rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 1rem;
+    font-size: 1.6rem;
+  }
 }
 
 .hero_cta_description {
@@ -474,6 +534,11 @@ onUnmounted(() => {
   margin-top: 3rem;
   line-height: 130%;
   max-width: 19rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
 }
 
 .hero_cta_button {
@@ -498,6 +563,14 @@ onUnmounted(() => {
     background: #C9B36E;
     color: #000;
   }
+  @media screen and (max-width: 768px) {
+   margin-left: 1rem;
+   margin-top: 1rem;
+   width: calc(100% - 5.5rem);
+   max-width: unset;
+   font-size: 0.875rem;
+   height: 0.75rem;
+  }
 }
 
 .map_img {
@@ -507,6 +580,41 @@ onUnmounted(() => {
   width: 69rem;
   height: auto;
 }
+
+.mobile-menu__button {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: relative;
+    color: #000;
+    text-align: center;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0.44rem 1.7rem;
+    background: #FFF;
+    width: calc(100% - 5rem);
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  &:hover {
+    background: #C9B36E;
+    color: #000;
+  }
+}
+.mobile-menu__button_second {
+  margin-left: 0;
+  width: calc(100% - 4.2rem);
+  margin-top: 4rem;
+}
+
+.mobile-menu__button_third {
+  margin-left: 1rem;
+  width: calc(100% - 5.2rem);
+  margin-top: 4rem;
+}
+
 
 
 </style>
