@@ -230,10 +230,12 @@ const submitForm = () => {
 }
 
 h2 {
-  font-size: 1.16rem;
+  font-size: 1.17rem;
   margin-top: 3.5rem;
   text-align: center;
   color: #C9B36E;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .form_grid {
