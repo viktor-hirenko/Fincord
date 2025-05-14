@@ -227,7 +227,6 @@ const submitForm = () => {
   max-width: 34rem;
   width: 100%;
   padding: 0 1rem;
-  z-index: 300;
   
   @media screen and (max-width: 768px) {
     max-width: 90%;

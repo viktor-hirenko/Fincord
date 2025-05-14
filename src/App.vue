@@ -249,14 +249,12 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 1000;
   background-image: url('/img/noise.svg');
   background-size: 100px;
   background-position: center;
   background-repeat: repeat;
-  -webkit-mix-blend-mode: color-burn;
   mix-blend-mode: color-burn;
-
   pointer-events: none;
 }
 </style>
