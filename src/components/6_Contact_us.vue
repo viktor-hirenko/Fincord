@@ -423,6 +423,7 @@ h2 {
 
 .submit_button {
   margin-top: 1rem;
+  font-weight: 700;
   background-color: transparent;
   color: #fff;
   border: 1px solid #fff;
@@ -432,7 +433,7 @@ h2 {
   transition: background-color 0.3s, color 0.3s;
   
   &:hover {
-    background-color: #C9B36E;
+    background-color: #ffffff;
     color: #000;
     border-color: #C9B36E;
   }
