@@ -16,6 +16,24 @@ const router = useRouter()
 function adjustScale(): void {
   const vh = Math.round(window.innerHeight / 100)
   document.documentElement.style.setProperty('--vh', `${vh}px`)
+  
+  // Динамическое изменение font-size и --scale-value
+  const screenWidth = window.innerWidth
+  const baseWidth = 1440
+  
+  if (screenWidth <= 768) {
+    // Для мобильных устройств фиксированные значения
+    document.documentElement.style.fontSize = '16px'
+    document.documentElement.style.setProperty('--scale-value', '0.3')
+  } else {
+    // Пропорциональное масштабирование для десктопов
+    const ratio = screenWidth / baseWidth
+    const fontSize = Math.max(8, Math.min(16, 16 * ratio)) // Ограничиваем минимум 10px, максимум 16px
+    const scaleValue = Math.max(0.3, Math.min(1, ratio)) // Ограничиваем минимум 0.3, максимум 1
+    
+    document.documentElement.style.fontSize = `${fontSize}px`
+    document.documentElement.style.setProperty('--scale-value', scaleValue.toFixed(2))
+  }
 }
 
 // Функция для скролла к элементу по id
@@ -52,7 +70,12 @@ function handleRouteParam(): void {
 
 // Скрытие прелоадера после монтирования компонента
 onMounted(() => {
-  window.addEventListener('DOMContentLoaded', adjustScale);
+  // Вызываем функцию при загрузке страницы
+  adjustScale()
+  
+  // Добавляем обработчик события изменения размера окна
+  window.addEventListener('resize', adjustScale)
+  window.addEventListener('DOMContentLoaded', adjustScale)
   
   // Обработка хеша URL при загрузке страницы
   if (window.location.hash) {
@@ -82,30 +105,8 @@ onMounted(() => {
 
 <style lang="scss">
 :root {
-  font-size: 16px;
   --scale-value: 1;
-
-  @media screen and (max-width: 1400px) {
-    font-size: 15.6px; 
-    --scale-value: 0.97;
-  }
-  
-  @media screen and (max-width: 1300px) {
-    font-size: 14px; 
-    --scale-value: 0.88;
-  }
-  @media screen and (max-width: 1100px) {
-    font-size: 12px;
-    --scale-value: 0.75;
-  }
-  @media screen and (max-width: 959px) {
-    font-size: 10px;
-    --scale-value: 0.6;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-    --scale-value: 0.3;
-  }
+  /* Удаляем статические медиа-запросы, теперь динамическое управление через JavaScript */
 }
 
 .app-container {
