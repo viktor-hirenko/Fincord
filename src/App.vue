@@ -2,6 +2,7 @@
   <div class="app-container">
     <Header />
     <router-view />
+    <div class="noise"></div>
   </div>
   
 </template>
@@ -250,17 +251,16 @@ section {
   }
 
   .noise {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    background-image: url('/img/noise.svg');
-    background-size: 100px;
+    z-index: 1000;
+    background-image: url('/img/noise.webp');
+    background-size: 300px;
     background-position: center;
     background-repeat: repeat;
-    mix-blend-mode: color-burn;
     pointer-events: none;
   }
 

@@ -1,17 +1,25 @@
 <template>
-  <section id="home" class="hero">
-    <div class="hero_img_wrapper">
+
+
+<section id="home" class="hero">
+  <div class="hero_img_wrapper">
       <img :src="heroImage" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
       <img :src="linesImage" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
     </div>
-
-    
     <div class="hero_wrapper">
       <div class="hero_content">
         <div class="hero_counter">{{ formattedCounter }}</div>
         <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
       </div>
-      
+    </div>
+  
+</section>
+
+
+
+  <section class="after_hero">
+    <div class="after_hero_wrapper">
+    
 
       <div class="hero_content_wrapper">
         <a href="#contact">
@@ -190,18 +198,35 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
+
 .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;  
+}
+
+
+
+
+.after_hero {
   position: relative;
   width: 100%;
   top: 0;
   left: 0;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
-  min-height: 223.4rem;
+  min-height: 170rem;
   @media screen and (max-width: 768px) {
     min-height: 187rem;
   }
 }
+
+
 
 .hero_wrapper {
   top: 5rem;
@@ -209,7 +234,7 @@ onUnmounted(() => {
   max-width: 90rem;
   width: 100%;
   z-index: 1;
-  @media screen and (max-width: 959px) {
+  @media screen and (max-width: 768px) {
     top: 0;
     height: 100%;
     overflow: hidden;
@@ -217,11 +242,26 @@ onUnmounted(() => {
   }
 }
 
+.after_hero_wrapper {
+  position: relative;
+  max-width: 90rem;
+  width: 100%;
+  z-index: 1;
+  @media screen and (max-width: 768px) {
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column-reverse;
+  }
+}
+
+
+
 .hero_content {
   position: absolute;
   left: 50%;
-  top: 30.4rem;
-  transform: translateX(85%);
+  top: 50%;
+  transform: translate(85%, 100%);
   @media screen and (max-width: 768px) {
     top: 14.5em;
     transform: translateX(0%);
@@ -304,7 +344,6 @@ onUnmounted(() => {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top: 47rem;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     flex-wrap: nowrap;
