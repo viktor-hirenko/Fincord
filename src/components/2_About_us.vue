@@ -150,12 +150,12 @@
 .mobile_button {
   display: none;
   @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
     width: calc(100% - 2rem);
     display: block;
     position: relative;
     color: #C9B36E;
     text-align: center;
-    font-size: 0.875rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

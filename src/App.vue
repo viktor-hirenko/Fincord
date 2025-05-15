@@ -265,6 +265,11 @@ section {
     opacity: 0.12;
   }
 
-  /* Специфические стили для Safari */
+  .mobile_br {
+    display: none;
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+}
 
 </style>

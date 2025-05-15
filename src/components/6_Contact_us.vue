@@ -459,22 +459,20 @@ h2 {
 .submit_button {
   margin-top: 1rem;
   font-weight: 700;
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  background-color: #ffffff;
+  color: #000;
   padding: 0.8rem 3rem;
   font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   @media screen and (max-width: 768px) {
     margin-bottom: 3rem;
-    font-size: 0.875rem;
+    width: 100%;
   }
   
   &:hover {
-    background-color: #ffffff;
+    background-color: #C9B36E;
     color: #000;
-    border-color: #C9B36E;
   }
   
   &:disabled {
@@ -555,12 +553,7 @@ h2 {
 }
 
 
-.mobile_br {
-  display: none;
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-}
+
 
 .form_field label {
   @media screen and (max-width: 768px) {

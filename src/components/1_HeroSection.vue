@@ -10,8 +10,13 @@
     <div class="hero_wrapper">
       <div class="hero_content">
         <div class="hero_counter">{{ formattedCounter }}</div>
-        <div class="hero_counter_description">transactions <br> successfully <br> completed today</div>
+        <div class="hero_counter_description">transactions <br class="mobile_br"> successfully <br> completed today</div>
       </div>
+      <a href="#contact">
+          <div class="mobile-menu__button">
+            Get in touch
+          </div>
+        </a>
     </div>
   
 </section>
@@ -23,11 +28,7 @@
     
 
       <div class="hero_content_wrapper">
-        <a href="#contact">
-          <div class="mobile-menu__button">
-            Get in touch
-          </div>
-        </a>
+        
         <div class="hero_title">
           Talk to us about:
         </div>
@@ -210,6 +211,13 @@ onUnmounted(() => {
   left: 0;
   display: flex;
   justify-content: center;  
+  min-height: 50rem;
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
+  @media screen and (max-width: 768px) {
+    min-height: 20rem;
+  }
 }
 
 
@@ -225,7 +233,7 @@ onUnmounted(() => {
   justify-content: center;
   min-height: 170rem;
   @media screen and (max-width: 768px) {
-    min-height: 187rem;
+    min-height: 151rem;
   }
 }
 
@@ -262,17 +270,17 @@ onUnmounted(() => {
 
 .hero_content {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(85%, 100%);
+    left: 50%;
+    top: 34rem;
+    transform: translateX(85%);
   @media screen and (max-width: 768px) {
     text-align: right;
     top: unset;
     transform: unset;
-    bottom: 16vh;
+    bottom: 10vh;
     right: 1rem;
     @supports (height: 100dvh) {
-      bottom: 16dvh;
+      bottom: 10dvh;
     }
   }
 }
@@ -287,12 +295,12 @@ onUnmounted(() => {
   font-weight: 700;
   line-height: normal;
   text-align: left;
-  width: 16rem;
   z-index: 10;
   @media screen and (max-width: 768px) {
     font-size: 2.6rem;
     text-align: right;
     width: auto;
+    white-space: nowrap;
   }
 }
 
@@ -379,7 +387,6 @@ onUnmounted(() => {
   @media screen and (max-width: 768px) {
     flex-direction: column;
     flex-wrap: nowrap;
-    margin-top: 25rem;
     overflow: hidden;
   }
 }
@@ -400,7 +407,6 @@ onUnmounted(() => {
   @media screen and (max-width: 768px) {
     margin-left: 1rem;
     margin-bottom: 2rem;
-    margin-top: 7rem;
   }
 }
 
@@ -565,7 +571,7 @@ onUnmounted(() => {
   margin-top: 25px;
   width: 1057px;
   height: 251px;
-
+  display: block;
 }
 
 .img_2_container {
@@ -656,24 +662,37 @@ onUnmounted(() => {
   left: 26rem;
   width: 69rem;
   height: auto;
+  @media screen and (max-width: 768px) {
+    top: 0rem;
+    left: 15rem;
+    width: 20rem;
+    height: auto;
+    opacity: 0.7;
+  }
 }
 
 .mobile-menu__button {
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
-    position: relative;
+    position: absolute;
     color: #000;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 0.44rem 1.7rem;
     background: #FFF;
-    width: calc(100% - 5rem);
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 2rem);
     margin-left: 1rem;
-    margin-top: 1rem;
+    bottom: 2vh;
+    @supports (height: 100dvh) {
+      bottom: 2dvh;
+    }
   }
   &:hover {
     background: #C9B36E;
@@ -681,14 +700,16 @@ onUnmounted(() => {
   }
 }
 .mobile-menu__button_second {
+  position: relative;
   margin-left: 0;
-  width: calc(100% - 4.2rem);
+  width: calc(100% - 1rem);
   margin-top: 4rem;
 }
 
 .mobile-menu__button_third {
+  position: relative;
   margin-left: 1rem;
-  width: calc(100% - 5.2rem);
+  width: calc(100% - 2rem);
   margin-top: 4rem;
 }
 
