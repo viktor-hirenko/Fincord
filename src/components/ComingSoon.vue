@@ -4,13 +4,14 @@
     <p class="stay">stay</p>
     <p class="tuned">tuned</p>
     <div class="coming_soon_img_wrapper">
-      <img src="/img/lines.svg" alt="coming soon" class="lines">
+      <img :src="linesImage" alt="coming soon" class="lines">
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 // Компонент Coming Soon
+import linesImage from '../assets/images/lines.svg';
 </script>
 
 <style lang="scss" scoped>

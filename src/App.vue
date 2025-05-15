@@ -84,6 +84,11 @@ onMounted(() => {
 :root {
   font-size: 16px;
   --scale-value: 1;
+
+  @media screen and (max-width: 1400px) {
+    font-size: 15.6px; 
+    --scale-value: 0.97;
+  }
   
   @media screen and (max-width: 1300px) {
     font-size: 14px; 

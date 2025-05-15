@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header_wrapper">
       <router-link to="/">
-        <img src="/img/logo.svg" alt="Fincord" class="header__logo"/>
+        <img :src="logoImage" alt="Fincord" class="header__logo"/>
       </router-link>
       <!-- Десктопное меню -->
       <div class="menu_wrapper">
@@ -43,7 +43,7 @@
     
     <Transition name="menu-slide">
       <div class="mobile-menu" v-if="isMenuOpen">
-        <img src="/img/logo.svg" alt="Fincord" class="mobile-menu__logo"/>
+        <img :src="logoImage" alt="Fincord" class="mobile-menu__logo"/>
         <div class="mobile-menu__close" @click="closeMenu">
           <span></span>
           <span></span>
@@ -74,6 +74,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import logoImage from '../assets/images/logo.svg';
 
 const isMenuOpen = ref(false);
 

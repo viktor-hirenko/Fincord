@@ -1,8 +1,8 @@
 <template>
   <section id="home" class="hero">
     <div class="hero_img_wrapper">
-      <img src="/img/hero_img.svg?v1" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
-      <img src="/img/lines.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
+      <img :src="heroImage" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
+      <img :src="linesImage" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
     </div>
 
     
@@ -85,12 +85,12 @@
       </div>
       <div class="img_2_container">
       <div class="hero_img_wrapper wap_img_2">
-      <img src="/img/hero_img1.svg?v1" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
-      <img src="/img/line1.svg" alt="" v-lazy-animate="{delay: 100}" class="lines_img line_1">
+      <img :src="heroImage1" alt="" v-lazy-animate="{delay: 100}" class="hero_img img_2">
+      <img :src="line1Image" alt="" v-lazy-animate="{delay: 100}" class="lines_img line_1">
     </div>
     </div>
     <div class="hero_cta">
-      <img src="/img/map.webp" alt="" class="map_img">
+      <img :src="mapImage" alt="" class="map_img">
       <div class="hero_cta_title">
         our business vision extends
 above and beyond specific industry or geogrphy
@@ -112,6 +112,11 @@ Our connections with an extensive global network of payment method providers bri
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+import heroImage from '../assets/images/hero_img.svg';
+import heroImage1 from '../assets/images/hero_img1.svg';
+import linesImage from '../assets/images/lines.svg';
+import line1Image from '../assets/images/line1.svg';
+import mapImage from '../assets/images/map.webp';
 
 // Счетчик
 const counter = ref(0);
