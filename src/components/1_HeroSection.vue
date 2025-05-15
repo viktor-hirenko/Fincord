@@ -4,12 +4,13 @@
 <section id="home" class="hero">
   <div class="hero_img_wrapper">
       <img :src="heroImage" alt="" v-lazy-animate="{delay: 100}" class="hero_img">
+      <img :src="heroImageMobile" alt="" v-lazy-animate="{delay: 100}" class="hero_img_mobile">
       <img :src="linesImage" alt="" v-lazy-animate="{delay: 100}" class="lines_img">
     </div>
     <div class="hero_wrapper">
       <div class="hero_content">
         <div class="hero_counter">{{ formattedCounter }}</div>
-        <div class="hero_counter_description">Total number of successful <br> transactions supervised <br> by us today</div>
+        <div class="hero_counter_description">transactions <br> successfully <br> completed today</div>
       </div>
     </div>
   
@@ -112,6 +113,7 @@ Our connections with an extensive global network of payment method providers bri
           <div class="mobile-menu__button mobile-menu__button_third">
             Get in touch
           </div>
+          <div class="desktop_button">Get in touch</div>
         </a>
     </div>
     </div>
@@ -121,6 +123,7 @@ Our connections with an extensive global network of payment method providers bri
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 import heroImage from '../assets/images/hero_img.svg';
+import heroImageMobile from '../assets/images/hero_img_mobile.svg';
 import heroImage1 from '../assets/images/hero_img1.svg';
 import linesImage from '../assets/images/lines.svg';
 import line1Image from '../assets/images/line1.svg';
@@ -263,8 +266,14 @@ onUnmounted(() => {
   top: 50%;
   transform: translate(85%, 100%);
   @media screen and (max-width: 768px) {
-    top: 14.5em;
-    transform: translateX(0%);
+    text-align: right;
+    top: unset;
+    transform: unset;
+    bottom: 16vh;
+    right: 1rem;
+    @supports (height: 100dvh) {
+      bottom: 16dvh;
+    }
   }
 }
 
@@ -282,6 +291,8 @@ onUnmounted(() => {
   z-index: 10;
   @media screen and (max-width: 768px) {
     font-size: 2.6rem;
+    text-align: right;
+    width: auto;
   }
 }
 
@@ -292,11 +303,11 @@ onUnmounted(() => {
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
-  text-align: left;
+  text-align: right;
   z-index: 1;
   margin-top: 0.6rem;
   @media screen and (max-width: 768px) {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 }
 
@@ -310,6 +321,22 @@ onUnmounted(() => {
   width: 1200px;
   height: auto;
   z-index: 0;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.hero_img_mobile {
+  position: absolute;
+  top: 112px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    width: 1100px;
+    height: auto;
+  }
 }
 
 .lines_img {
@@ -321,6 +348,11 @@ onUnmounted(() => {
   width: 928px;
   height: 100%;
   z-index: 1;
+  @media screen and (max-width: 768px) {
+    top: 258px;
+    transform: perspective(800px) rotateY(60deg) rotateZ(339deg) translateX(-23%);
+    -webkit-transform: perspective(800px) rotateY(60deg) rotateZ(339deg) translateX(-23%);
+  }
 }
 
 .hero_img_wrapper {
@@ -660,6 +692,32 @@ onUnmounted(() => {
   margin-top: 4rem;
 }
 
+.desktop_button {
+  position: relative;
+  color: #000;
+  text-align: center;
+  font-size: 1.4625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: #fff;
+  max-width: 14.3rem;
+  padding: 0.75rem 0;
+  margin-top: 3rem;
+  margin-left: 12.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.desktop_button:hover {
+  background: #C9B36E;
+  color: #000;
+}
 
 
 

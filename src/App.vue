@@ -256,12 +256,13 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 50;
     background-image: url('/img/noise.webp');
     background-size: 300px;
     background-position: center;
     background-repeat: repeat;
     pointer-events: none;
+    opacity: 0.12;
   }
 
   /* Специфические стили для Safari */

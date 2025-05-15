@@ -250,7 +250,7 @@ const closeMenu = () => {
   width: 80%;
   max-width: 320px;
   height: 100vh;
-  background-color: #0F0F0F;
+  background-color: #000;
   z-index: 1002;
   padding: 5rem 1.5rem 2rem;
   display: flex;
