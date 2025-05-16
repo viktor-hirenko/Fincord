@@ -30,43 +30,41 @@
       <div class="hero_content_wrapper">
         
         <div class="hero_title">
-          Talk to us about:
+          Explore our
+          <br> payment ecosystem:
         </div>
         <div class="services_list">
           <div class="service_item">
             <div class="service_item_title">
-              Payment <br> processing
+              GLOBAL <br class="desktop_br"> TRANSACTIONS
             </div>
             <div class="service_item_description">
-              Multitude of payment methods available globally - cards and alternative payment methods. We introduce your business to both deposits and payouts.
-            </div>
+              Accept deposits and send payouts worldwide — with cards and alternative payment methods.</div>
           </div>
           <div class="divider"></div>
           <div class="service_item">
             <div class="service_item_title">
-              Banking
+              BANKING <br class="desktop_br"> OPERATIONS
             </div>
             <div class="service_item_description">
-              We share connections with a global banking network, so that you could open B2B accounts, make transfers and foreign exchange seamlessly.  
-            </div>
+              Access fast international transfers, multi-currency conversion, and B2B account setup through our global banking network.</div>
           </div>
           <div class="divider"></div>
           <div class="service_item">
             <div class="service_item_title">
-              Payment <br> Technology
+              PAYMENT <br class="desktop_br"> TECHNOLOGY
             </div>
             <div class="service_item_description">
-              We advise regarding all the questions related to payment software development, data protection and data storage consulting.
-            </div>
+              Build on solid infrastructure. From secure architecture to smart data protection, we guide your tech stack with expertise and precision.</div>
           </div>
           <div class="divider"></div>
           <div class="service_item">
             <div class="service_item_title">
-              Compliance and <br> Risk management
+              COMPLIANCE & <br class="desktop_br"> RISK MANAGEMENT
             </div>
             <div class="service_item_description">
-              We help create and implement robust compliance policies and procedures tailored to specific regulatory requirements and industry best practices.
-            </div>
+              Minimise risk and stay
+ahead of regulations. We help tailor and implement compliance frameworks that fit your business and industry.</div>
           </div>
           <a href="#contact">
           <div class="mobile-menu__button mobile-menu__button_second">
@@ -102,13 +100,13 @@
     <div class="hero_cta">
       <img :src="mapImage" alt="" class="map_img">
       <div class="hero_cta_title">
-        our business vision extends
-above and beyond specific industry or geogrphy
+        CONNECTING <br class="mobile_br"> PAYMENTS <br class="desktop_br"> GLOBALLY
       </div>
       <div class="hero_cta_description">
-        We are experts in fintech, no matter where you do it. Each clients gets a personal account manager available 24/7.
+        No matter where you operate, Fincord combines global coverage with local expertise to accelerate your business growth.
         <br> <br>
-Our connections with an extensive global network of payment method providers brings flexibility multiplied by worldwide coverage.
+With a dedicated account manager available 24/7 and access to a worldwide network of payment providers, we deliver fast, secure, and flexible transactions across markets, currencies, and platforms.
+
       </div>
       <a href="#contact">
           <div class="mobile-menu__button mobile-menu__button_third">
@@ -307,15 +305,16 @@ onUnmounted(() => {
 .hero_counter_description {
   position: relative;
   color: #F2F2F2;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
-  text-align: right;
+  text-align: left;
   z-index: 1;
   margin-top: 0.6rem;
   @media screen and (max-width: 768px) {
     font-size: 1rem;
+    text-align: right;
   }
 }
 
@@ -396,10 +395,10 @@ onUnmounted(() => {
   text-align: left;
   display: flex;
   color: #F2F2F2;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  line-height: 130%;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
   margin-left: 7.5rem;
   width: 12rem;
   white-space: nowrap;
@@ -438,6 +437,9 @@ onUnmounted(() => {
   line-height: 130%;
   text-transform: uppercase;
   width: 16rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
 
 .service_item:nth-child(n+2) .service_item_title {
@@ -450,7 +452,7 @@ onUnmounted(() => {
 .service_item_description {
   position: relative;
   color: #C9B36E;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -460,6 +462,7 @@ onUnmounted(() => {
   line-height: 130%;
   @media screen and (max-width: 768px) {
     margin-left: 0;
+    font-size: 1rem;
   }
 }
 
@@ -609,7 +612,7 @@ onUnmounted(() => {
 .hero_cta_description {
   position: relative;
   color: #C9B36E;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -620,7 +623,7 @@ onUnmounted(() => {
   @media screen and (max-width: 768px) {
     margin-left: 1rem;
     margin-top: 1rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 }
 
@@ -723,12 +726,14 @@ onUnmounted(() => {
   line-height: normal;
   background: #fff;
   max-width: 14.3rem;
-  padding: 0.75rem 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 3rem;
   margin-left: 12.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: block;
   text-decoration: none;
   @media screen and (max-width: 768px) {
     display: none;

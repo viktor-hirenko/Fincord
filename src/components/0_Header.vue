@@ -143,9 +143,11 @@ const closeMenu = () => {
   display: flex;
   margin-right: 4rem;
   cursor: pointer;
-  padding: 0.44rem 1.7rem;
-  justify-content: center;
+  padding: 0 1.7rem;
+  height: 3rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background: #F2F2F2;
   @media screen and (max-width: 768px) {

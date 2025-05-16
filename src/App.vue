@@ -272,4 +272,11 @@ section {
       }
 }
 
+.desktop_br {
+    display: block;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+}
+
 </style>

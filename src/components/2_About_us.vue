@@ -2,34 +2,34 @@
   <section id="about" class="about_us">
     <div class="about_us_wrapper">
       <div class="about_us_titles_wrapper">
-        <div class="about_us_title">PAYMENT SOLUTIONS TUNED WITH YOU IN MIND</div>
-        <div class="about_us_subtitle">People-first approach is <br> the foundation of our work.</div>
+        <div class="about_us_title">Smart control for growing payments</div>
+        <div class="about_us_subtitle">Fincord gives you complete control over your payment operations — without added complexity, delays, or risk.</div>
         <router-link to="/#contact" class="desktop_button">Get in touch</router-link>
       </div>
       <div class="text_about_us_wrapper">
         <div class="text_about_us_title">
-          WE ARE SAFE
+          BUILT-IN SECURITY
         </div>
         <div class="text_about_us_content">
-          Fraud-free online payment solutions and services, with complete safety and privacy ensured.
+          Every transaction is protected by real-time fraud detection and full compliance — keeping your business and customers secure by default.
         </div>
         <div class="text_about_us_title">
-          WE ARE <br class="desktop_br"> CLIENT-FOCUSED
+          END-TO-END SUPPORT
         </div>
         <div class="text_about_us_content">
-          Easy integration, constant support, and other needs handled as requested. We make it smooth for you.
+          From initial onboarding to ongoing optimisation, our team ensures smooth, reliable payment operations at every stage.
         </div>
         <div class="text_about_us_title">
-          WE ARE <br class="desktop_br"> PUPROSE-MADE
+          SEAMLESS INTEGRATION
         </div>
         <div class="text_about_us_content">
-          You seek unique solutions,we find them. Perfect-fit partnership ecosystem, selected based on your needs.
+          Launch quickly with modern APIs and pre-built components that fit into your existing systems.
         </div>
         <div class="text_about_us_title">
-          WE ARE <br class="desktop_br"> TRANSPARENT
+          FULL VISIBILITY
         </div>
         <div class="text_about_us_content">
-          You are aware of everything that's going on, with instant access to a customized merchant portal.
+          Track every payment in real time and make faster, data-driven decisions with complete clarity.
         </div>
         <router-link to="/#contact" class="mobile_button">Get in touch</router-link>
       </div>
@@ -100,13 +100,13 @@
 .about_us_subtitle {
   position: relative;
   color: #000;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-top: 3.25rem;
   margin-left: 5rem;
-  max-width: 18rem;
+  max-width: 27rem;
   line-height: 130%;
   @media screen and (max-width: 768px) {
     font-size: 0.75rem;
@@ -130,12 +130,14 @@
   line-height: normal;
   background: #000;
   max-width: 14.3rem;
-  padding: 0.75rem 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 4rem;
   margin-left: 5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: block;
   text-decoration: none;
   @media screen and (max-width: 768px) {
     display: none;
@@ -214,7 +216,7 @@
 .text_about_us_content {
   position: relative;
   color: #000;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -222,20 +224,13 @@
   max-width: 20rem;
   line-height: 130%;
   @media screen and (max-width: 768px) {
+    font-size: 1rem;
     max-width: unset;
     margin-right: 2rem;
     font-size: 0.75rem;
   }
 }
 
-.desktop_br {
-  display: none;
-}
 
-@media (min-width: 960px) {
-  .desktop_br {
-    display: block;
-  }
-}
 
 </style>

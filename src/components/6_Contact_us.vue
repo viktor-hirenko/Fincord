@@ -74,7 +74,7 @@
         
         <div class="submit_wrapper">
           <button @click="submitForm" class="submit_button" :disabled="isSubmitting">
-            {{ isSubmitting ? 'Sending...' : 'Get in touch' }}
+            {{ isSubmitting ? 'Sending...' : 'Send' }}
           </button>
         </div>
       </div>
@@ -340,7 +340,7 @@ h2 {
 
 .volume_options {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   
   @media screen and (max-width: 768px) {
@@ -371,7 +371,6 @@ h2 {
       background-color: rgba(201, 179, 110, 0.40);
       padding: 0.5rem;
       cursor: pointer;
-      font-size: 0.625rem;
       color: #000;
       transition: background-color 0.3s;
       margin: 0;
@@ -385,11 +384,11 @@ h2 {
       &:before {
         content: '';
         display: inline-block;
-        width: 1rem;
-        height: 1rem;
+        width: 0.875rem;
+        height: 0.875rem;
         border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.60);;
-        margin-right: 0.4rem;
+        border: 2px solid rgba(0, 0, 0, 0.60);;
+        margin-right: 0.7rem;
         background-color: transparent;
         position: relative;
         aspect-ratio: 1/1;
@@ -461,13 +460,16 @@ h2 {
   font-weight: 700;
   background-color: #ffffff;
   color: #000;
-  padding: 0.8rem 3rem;
-  font-size: 1.25rem;
+  padding: 0 5rem;
+  height: 3rem;
+  font-size: 1.46rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   @media screen and (max-width: 768px) {
     margin-bottom: 3rem;
     width: 100%;
+    font-size: 1.25rem;
+    height: 2.5rem;
   }
   
   &:hover {
