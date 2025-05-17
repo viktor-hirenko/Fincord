@@ -229,10 +229,6 @@ onUnmounted(() => {
   margin-top: 3rem;
   display: flex;
   justify-content: center;
-  min-height: 170rem;
-  @media screen and (max-width: 768px) {
-    min-height: 151rem;
-  }
 }
 
 
@@ -463,6 +459,7 @@ onUnmounted(() => {
   @media screen and (max-width: 768px) {
     margin-left: 0;
     font-size: 1rem;
+    max-width: 100%;
   }
 }
 
@@ -624,6 +621,8 @@ onUnmounted(() => {
     margin-left: 1rem;
     margin-top: 1rem;
     font-size: 1rem;
+    max-width: 100%;
+    margin-right: 1rem;
   }
 }
 
@@ -662,8 +661,8 @@ onUnmounted(() => {
 .map_img {
   position: absolute;
   top: 7rem;
-  left: 26rem;
-  width: 69rem;
+  left: 30rem;
+  width: 63rem;
   height: auto;
   @media screen and (max-width: 768px) {
     top: 0rem;
@@ -714,6 +713,7 @@ onUnmounted(() => {
   margin-left: 1rem;
   width: calc(100% - 2rem);
   margin-top: 4rem;
+  margin-bottom: 1.75rem;
 }
 
 .desktop_button {
@@ -735,6 +735,7 @@ onUnmounted(() => {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  margin-bottom: 10rem;
   @media screen and (max-width: 768px) {
     display: none;
   }

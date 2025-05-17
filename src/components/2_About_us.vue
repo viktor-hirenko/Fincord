@@ -52,9 +52,6 @@
   height: auto;
   background: #C9B36E;
   scroll-margin-top: 85px;
-  @media screen and (max-width: 768px) {
-    min-height: 58rem;
-  }
 }
 
 .about_us_wrapper {
@@ -78,7 +75,7 @@
   margin-left: 1rem;
   width: 100%;
   @media screen and (max-width: 768px) {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 }
 
@@ -109,12 +106,13 @@
   max-width: 27rem;
   line-height: 130%;
   @media screen and (max-width: 768px) {
-    font-size: 0.75rem;
-    margin-right: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    margin-left: 6rem;
     text-align: left;
-    max-width: unset;
+    max-width: calc(100% - 9rem);
     width: fit-content;
-    margin-left: auto;
+
     right: 0;
     left: unset;
   }
@@ -164,6 +162,7 @@
     background: #000;
     padding: 0.75rem 0;
     margin-top: 4rem;
+    margin-bottom: 4rem;
     cursor: pointer;
     transition: all 0.3s ease;
     display: block;
@@ -223,11 +222,19 @@
   margin-top: 1.35rem;
   max-width: 20rem;
   line-height: 130%;
+  
+  &:last-of-type {
+    margin-bottom: 6rem;
+  }
+  
   @media screen and (max-width: 768px) {
     font-size: 1rem;
     max-width: unset;
     margin-right: 2rem;
-    font-size: 0.75rem;
+    
+    &:last-of-type {
+      margin-bottom: 4rem;
+    }
   }
 }
 
