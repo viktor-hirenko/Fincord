@@ -423,7 +423,8 @@ h2 {
     -webkit-appearance: none;
     width: 1.25rem;
     height: 1.25rem;
-    border: 1px solid #C9B36E;
+    border-radius: 100%;
+    border: 2px solid #C9B36E;
     background-color: transparent;
     display: inline-block;
     position: relative;
@@ -433,9 +434,9 @@ h2 {
     &:checked:after {
       content: '';
       position: absolute;
-      left: 0.3rem;
+      left: 0.2rem;
       top: 0.1rem;
-      width: 0.4rem;
+      width: 0.3rem;
       height: 0.5rem;
       border: solid #C9B36E;
       border-width: 0 2px 2px 0;

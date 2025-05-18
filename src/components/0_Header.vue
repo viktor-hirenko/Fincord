@@ -162,10 +162,10 @@ const closeMenu = () => {
 .button_text {
   color: #000;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.46rem;
   font-style: normal;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   line-height: normal;
   white-space: nowrap;
 }

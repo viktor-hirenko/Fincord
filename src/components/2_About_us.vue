@@ -202,7 +202,8 @@
   line-height: normal;
   text-transform: uppercase;
   margin-top: 1.5rem;
-  max-width: 18rem;
+  max-width: 20rem;
+  line-height: 130%;
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;
   }
