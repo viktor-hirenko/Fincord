@@ -435,7 +435,7 @@ h2 {
     &:checked:after {
       content: '';
       position: absolute;
-      left: 0.2rem;
+      left: 0.25rem;
       top: 0.1rem;
       width: 0.3rem;
       height: 0.5rem;
