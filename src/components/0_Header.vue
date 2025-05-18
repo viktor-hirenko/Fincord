@@ -132,7 +132,7 @@ const closeMenu = () => {
   position: relative;
   cursor: pointer;
   @media screen and (max-width: 768px) {
-    margin-left: 0.5rem;
+    margin-left: 0;
     width: 5.25rem;
     height: 0.92rem;
   }
@@ -208,7 +208,6 @@ const closeMenu = () => {
   width: 30px;
   height: 12px;
   cursor: pointer;
-  margin-right: 0.5rem;
   position: relative;
   z-index: 1100;
   

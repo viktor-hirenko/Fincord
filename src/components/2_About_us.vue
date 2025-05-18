@@ -161,7 +161,6 @@
     line-height: normal;
     background: #000;
     padding: 0.75rem 0;
-    margin-top: 4rem;
     margin-bottom: 4rem;
     cursor: pointer;
     transition: all 0.3s ease;

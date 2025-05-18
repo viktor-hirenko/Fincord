@@ -245,7 +245,8 @@ h2 {
   white-space: nowrap;
   @media screen and (max-width: 768px) {
     white-space: wrap;
-    font-size: 1rem;
+    font-size: 1.375rem;
+    line-height: 130%;
     margin-top: 4rem;
   }
 }
@@ -467,7 +468,7 @@ h2 {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   @media screen and (max-width: 768px) {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     width: 100%;
     font-size: 1.25rem;
     height: 2.5rem;
