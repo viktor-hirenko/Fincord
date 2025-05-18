@@ -2,7 +2,6 @@
   <div class="app-container">
     <Header />
     <router-view />
-    <div class="noise"></div>
   </div>
   
 </template>
@@ -252,7 +251,7 @@ section {
   }
 
   .noise {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

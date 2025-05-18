@@ -4,6 +4,7 @@
     <AboutUs />
     <ContactUs />
     <Footer  />
+    <div class="noise"></div>
   </div>
 </template>
 

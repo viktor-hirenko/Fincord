@@ -2,6 +2,7 @@
   <div class="main_wrapper">
     <ComingSoon />
     <Footer />
+    <div class="noise"></div>
   </div>
 </template>
 

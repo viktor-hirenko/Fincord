@@ -240,7 +240,7 @@ const closeMenu = () => {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1001;
 }
 
