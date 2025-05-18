@@ -218,6 +218,7 @@ const submitForm = () => {
   padding: 4rem 0;
   color: #fff;
   min-height: 40rem;
+  touch-action: manipulation;
   @media screen and (max-width: 768px) {
     padding: 2rem 0;
   }
@@ -230,6 +231,7 @@ const submitForm = () => {
   max-width: 34rem;
   width: 100%;
   padding: 0 1rem;
+  touch-action: pan-x pan-y;
   
   @media screen and (max-width: 768px) {
     max-width: 90%;
@@ -294,8 +296,12 @@ h2 {
     color: #fff;
     border-radius: 0;
     font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
     @media screen and (max-width: 768px) {
-      font-size: 0.75rem;
+      font-size: 16px;
     }
     
     &::placeholder {
@@ -488,6 +494,7 @@ h2 {
 .thank_you {
   text-align: center;
   padding: 3rem 1rem;
+  line-height: 130%;
   @media screen and (max-width: 768px) {
     margin-bottom: 5rem;
   }
@@ -498,7 +505,7 @@ h2 {
   }
   
   p {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     color: #fff;
   }
 }
@@ -556,14 +563,9 @@ h2 {
   }
 }
 
-
-
-
 .form_field label {
   @media screen and (max-width: 768px) {
     font-size: 0.75rem;
   }
 }
-
-
 </style>
