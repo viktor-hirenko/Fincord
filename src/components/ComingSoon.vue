@@ -22,10 +22,15 @@ import linesImage from '../assets/images/lines.svg';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh); /* Вычитаем высоту хедера и футера */
+  min-height: 100vh; /* Вычитаем высоту хедера и футера */
   background-color: #000;
+  max-width: 86rem;
+  margin: 0 auto;
   @supports (min-height: 100dvh) {
-    min-height: calc(100dvh);
+    min-height: 100dvh;
+  }
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
   
   h1 {
@@ -59,19 +64,19 @@ import linesImage from '../assets/images/lines.svg';
 
 .stay {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 6rem;
   @media (max-width: 768px) {
-    left: 2rem;
+    left: 1rem;
   }
 }
 
 .tuned {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   right: 6rem;
   @media (max-width: 768px) {
-    right: 2rem;
+    right: 1rem;
   }
 }
 
@@ -92,7 +97,7 @@ import linesImage from '../assets/images/lines.svg';
   left: -928px;
   width: 1200px;
   height: 100%;
-  transform: perspective(800px) rotateY(-54deg);
+  transform: perspective(800px) rotateY(-54deg) rotateZ(180deg);
 }
 
 

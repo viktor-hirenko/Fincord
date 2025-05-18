@@ -144,7 +144,7 @@ const closeMenu = () => {
   margin-right: 4rem;
   cursor: pointer;
   padding: 0 1.7rem;
-  height: 3rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +162,7 @@ const closeMenu = () => {
 .button_text {
   color: #000;
   text-align: center;
-  font-size: 1.46rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-style: normal;
   font-weight: 700;
@@ -294,8 +294,7 @@ const closeMenu = () => {
 }
 
 .mobile-menu__item {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   font-size: 1.125rem;
   font-weight: 400;
