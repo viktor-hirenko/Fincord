@@ -21,14 +21,15 @@ function adjustScale(): void {
   // Динамическое изменение font-size и --scale-value
   const screenWidth = window.innerWidth
   const baseWidth = 1440
+  const ratio = screenWidth / baseWidth
   
   if (screenWidth <= 768) {
     // Для мобильных устройств фиксированные значения
     document.documentElement.style.fontSize = '16px'
-    document.documentElement.style.setProperty('--scale-value', '0.3')
+    const scaleValue = Math.max(0.1, Math.min(1, ratio/0.82)) 
+    document.documentElement.style.setProperty('--scale-value', scaleValue.toFixed(3))
   } else {
     // Пропорциональное масштабирование для десктопов
-    const ratio = screenWidth / baseWidth
     const fontSize = Math.max(8, Math.min(16, 16 * ratio)) // Ограничиваем минимум 10px, максимум 16px
     const scaleValue = Math.max(0.3, Math.min(1, ratio)) // Ограничиваем минимум 0.3, максимум 1
     
