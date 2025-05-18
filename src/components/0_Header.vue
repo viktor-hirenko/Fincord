@@ -144,7 +144,7 @@ const closeMenu = () => {
   margin-right: 4rem;
   cursor: pointer;
   padding: 0 1.7rem;
-  height: 2.5rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
