@@ -21,11 +21,11 @@
       </div>
       
       <div class="header-controls">
-        <a href="#contact">
+        <router-link to="/#contact">
           <div class="header__button">
             <div class="button_text">Get in touch</div>
           </div>
-        </a>
+        </router-link>
         
         <!-- Гамбургер для мобильного меню -->
         <div class="hamburger" @click="toggleMenu" :class="{ 'is-active': isMenuOpen }">
@@ -62,11 +62,11 @@
             <router-link to="/blog" class="mobile-menu-link">blog</router-link>
           </div>
         </div>
-        <a href="#contact" @click="closeMenu">
+        <router-link to="/#contact" @click="closeMenu">
           <div class="header__button mobile-menu__button">
             <div class="button_text">Get in touch</div>
           </div>
-        </a>
+        </router-link>
       </div>
     </Transition>
   </div>
