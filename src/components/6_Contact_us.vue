@@ -384,8 +384,8 @@ h2 {
       height: 2rem;
       white-space: nowrap;
       @media screen and (max-width: 768px) {
-        font-size: 0.75rem !important;
-        color: rgba(0, 0, 0, 0.60)
+        font-size: 0.875rem !important;
+        color: rgba(0, 0, 0, 1);
       }
       
       &:before {
@@ -395,7 +395,7 @@ h2 {
         height: 0.875rem;
         border-radius: 50%;
         border: 2px solid rgba(0, 0, 0, 0.60);;
-        margin-right: 0.7rem;
+        margin-right: 1rem;
         background-color: transparent;
         position: relative;
         aspect-ratio: 1/1;

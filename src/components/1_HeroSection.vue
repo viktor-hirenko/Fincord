@@ -460,6 +460,7 @@ onUnmounted(() => {
     margin-left: 0;
     font-size: 1rem;
     max-width: 100%;
+    margin-right: 1rem;
   }
 }
 
