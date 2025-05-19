@@ -383,9 +383,10 @@ h2 {
       margin: 0;
       height: 2rem;
       white-space: nowrap;
+      font-size: 1rem;
       @media screen and (max-width: 768px) {
-        font-size: 0.875rem !important;
         color: rgba(0, 0, 0, 1);
+        font-size: 0.875rem !important;
       }
       
       &:before {
@@ -565,7 +566,7 @@ h2 {
 
 .form_field label {
   @media screen and (max-width: 768px) {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 }
 </style>
