@@ -3,7 +3,7 @@
     <div class="about_us_wrapper">
       <div class="about_us_titles_wrapper">
         <div class="about_us_title">Smart control for growing payments</div>
-        <div class="about_us_subtitle">Fincord gives you complete control over your payment operations — without added complexity, delays, or risk.</div>
+        <div class="about_us_subtitle">Fincord gives you complete control over your payment operations<span class="no-break-dash">—</span>without added complexity, delays, or risk.</div>
         <router-link to="/#contact" class="desktop_button">Get in touch</router-link>
       </div>
       <div class="text_about_us_wrapper">
@@ -11,7 +11,7 @@
           BUILT-IN SECURITY
         </div>
         <div class="text_about_us_content">
-          Every transaction is protected by real-time fraud detection and full compliance — keeping your business and customers secure by default.
+          Every transaction is protected by real-time fraud detection and full compliance<span class="no-break-dash">—</span>keeping your business and customers secure by default.
         </div>
         <div class="text_about_us_title">
           END-TO-END SUPPORT
@@ -177,11 +177,6 @@
   color: #000;
 }
 
-
-
-
-
-
 .text_about_us_wrapper {
   position: relative;
   display: flex;
@@ -240,7 +235,5 @@
     }
   }
 }
-
-
 
 </style>

@@ -39,7 +39,7 @@
               GLOBAL <br class="desktop_br"> TRANSACTIONS
             </div>
             <div class="service_item_description">
-              Accept deposits and send payouts worldwide — with cards and alternative payment methods.</div>
+              Accept deposits and send payouts worldwide<span class="no-break-dash">—</span>with cards and alternative payment methods.</div>
           </div>
           <div class="divider"></div>
           <div class="service_item">
@@ -746,8 +746,5 @@ onUnmounted(() => {
   background: #C9B36E;
   color: #000;
 }
-
-
-
 
 </style>
