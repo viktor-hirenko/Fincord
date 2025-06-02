@@ -33,11 +33,11 @@
           <div class="subsection">
             <p><strong>2.1.</strong> You may use the Website solely for lawful purposes. You agree that you will NOT:</p>
             
-            <ul class="prohibited_list">
-              <li>use the Website in any manner that violates any applicable law or regulation;</li>
-              <li>attempt to gain unauthorised access to, interfere with, damage or disrupt any part of the Website or any server, network or database connected to the Website;</li>
-              <li>introduce any viruses, trojans, worms, logic bombs or other material that is malicious or technologically harmful;</li>
-              <li>engage in any activity that could disable, overburden or impair the proper working of the Website.</li>
+            <ul class="definition_list">
+              <li>use the Website in any manner that violates any applicable law or regulation</li>
+              <li>attempt to gain unauthorised access to, interfere with, damage or disrupt any part of the Website or any server, network or database connected to the Website</li>
+              <li>introduce any viruses, trojans, worms, logic bombs or other material that is malicious or technologically harmful</li>
+              <li>engage in any activity that could disable, overburden or impair the proper working of the Website</li>
             </ul>
           </div>
         </div>
@@ -52,16 +52,20 @@
           <div class="subsection">
             <p><strong>3.2.</strong> Except as expressly permitted by Fincord in writing, you may not:</p>
             
-            <ul class="prohibited_list">
-              <li>Copy, reproduce, distribute, modify, or publicly display any Content;</li>
-              <li>Use any part of the Content for commercial purposes;</li>
-              <li>Use data mining, scraping, or similar tools to extract Content or information;</li>
-              <li>Use the Fincord name, logo, or trademarks without prior written consent.</li>
+            <ul class="definition_list">
+              <li>Copy, reproduce, distribute, modify, or publicly display any Content</li>
+              <li>Use any part of the Content for commercial purposes</li>
+              <li>Use data mining, scraping, or similar tools to extract Content or information</li>
+              <li>Use the Fincord name, logo, or trademarks without prior written consent</li>
             </ul>
           </div>
 
           <div class="subsection">
             <p><strong>3.3.</strong> Fincord retains all rights, title, and interest in and to the Content and underlying technology, including all intellectual property rights therein. Nothing in these Terms shall be construed as granting you any rights or licenses, by implication or otherwise, to any Content or IP owned or licensed by Fincord.</p>
+          </div>
+
+          <div class="subsection">
+            <p><strong>3.4.</strong> Fincord respects the intellectual property rights of others. If you believe that any Content infringes your copyright or trademark, please notify us in writing at Form and include: (i) identification of the work or mark claimed to be infringed, (ii) identification of the infringing material and its location, (iii) your contact details, (iv) a statement under penalty of perjury that you are the rights holder or authorised to act, and (v) your signature (physical or electronic). Upon receipt of a compliant notice, Fincord will expeditiously investigate and, where appropriate, remove or disable access to the allegedly infringing material, without prejudice to any party's rights or defences.</p>
           </div>
         </div>
 
@@ -71,13 +75,13 @@
           <div class="subsection">
             <p><strong>4.1.</strong> You agree not to, directly or indirectly:</p>
             
-            <ul class="prohibited_list">
-              <li>Copy, reproduce, republish, upload, post, transmit, translate, mirror, or distribute any part of the Website or its content by any means or in any form, without prior written consent from Fincord;</li>
-              <li>Use the Website or its content for any commercial, public, or revenue-generating purpose, including selling, licensing, renting, or exploiting any part thereof;</li>
-              <li>Create, adapt, modify, compile, aggregate, or otherwise develop derivative works based on the Website or its content;</li>
-              <li>Reverse-engineer, decompile, disassemble, or otherwise attempt to access or derive the source code of any software or functionality provided via the Website;</li>
-              <li>Use any automated tools, such as data mining, scraping, robots, or similar data gathering or extraction methods, to collect or extract content from the Website;</li>
-              <li>Remove, obscure, or alter any copyright notices, trademark attributions, or other proprietary rights notices embedded in or displayed via the Website or its content.</li>
+            <ul class="definition_list">
+              <li>Copy, reproduce, republish, upload, post, transmit, translate, mirror, or distribute any part of the Website or its content by any means or in any form, without prior written consent from Fincord</li>
+              <li>Use the Website or its content for any commercial, public, or revenue-generating purpose, including selling, licensing, renting, or exploiting any part thereof</li>
+              <li>Create, adapt, modify, compile, aggregate, or otherwise develop derivative works based on the Website or its content</li>
+              <li>Reverse-engineer, decompile, disassemble, or otherwise attempt to access or derive the source code of any software or functionality provided via the Website</li>
+              <li>Use any automated tools, such as data mining, scraping, robots, or similar data gathering or extraction methods, to collect or extract content from the Website</li>
+              <li>Remove, obscure, or alter any copyright notices, trademark attributions, or other proprietary rights notices embedded in or displayed via the Website or its content</li>
             </ul>
           </div>
 
@@ -95,101 +99,125 @@
         </div>
 
         <div class="section">
-          <h2 class="section_title">6. DISCLAIMER OF WARRANTIES</h2>
+          <h2 class="section_title">6. VACANCIES</h2>
           
           <div class="subsection">
-            <p><strong>6.1.</strong> The Website and all content, materials, and functionality provided through it are made available on an "as is" and "as available" basis, without any warranties of any kind, whether express, implied, or statutory.</p>
+            <p><strong>6.1.</strong> Job vacancies which maybe from time to time posted on the Website are for information only and may be amended or withdrawn at any time. Submitting an application does not create any obligation on Fincord to engage you.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section_title">7. THIRD-PARTY LINKS</h2>
+          
+          <div class="subsection">
+            <p><strong>7.1.</strong> The Website may contain links to third-party websites or resources. Such links are provided solely for your convenience. We have no control over the contents of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section_title">8. DISCLAIMER OF WARRANTIES</h2>
+          
+          <div class="subsection">
+            <p><strong>8.1.</strong> The Website and all content, materials, and functionality provided through it are made available on an "as is" and "as available" basis, without any warranties of any kind, whether express, implied, or statutory.</p>
           </div>
 
           <div class="subsection">
-            <p><strong>6.2.</strong> To the fullest extent permitted by applicable law, Fincord expressly disclaims all warranties, representations, and conditions, including but not limited to:</p>
+            <p><strong>8.2.</strong> To the fullest extent permitted by applicable law, Fincord expressly disclaims all warranties, representations, and conditions, including but not limited to:</p>
             
-            <ul class="prohibited_list">
-              <li>Implied warranties of merchantability, fitness for a particular purpose, non-infringement, and accuracy;</li>
-              <li>Any warranties arising out of course of dealing or usage of trade;</li>
-              <li>Any warranty that the Site will be uninterrupted, secure, error-free, or free of viruses or other harmful components;</li>
-              <li>Any warranty regarding the availability, accuracy, or reliability of any content or information provided on the Site.</li>
+            <ul class="definition_list">
+              <li>Implied warranties of merchantability, fitness for a particular purpose, non-infringement, and accuracy</li>
+              <li>Any warranties arising out of course of dealing or usage of trade</li>
+              <li>Any warranty that the Site will be uninterrupted, secure, error-free, or free of viruses or other harmful components</li>
+              <li>Any warranty regarding the availability, accuracy, or reliability of any content or information provided on the Site</li>
             </ul>
           </div>
-        </div>
-
-        <div class="section">
-          <h2 class="section_title">7. NO FINANCIAL SERVICES</h2>
-          
-          <div class="subsection">
-            <p><strong>7.1.</strong> Fincord is not a licensed financial institution, payment service provider, or electronic money institution under the laws of any jurisdiction.</p>
-          </div>
 
           <div class="subsection">
-            <p><strong>7.2.</strong> The Website and its associated services do not involve the receipt, holding, processing, or transmission of client funds. Fincord does not accept deposits, hold client money, or facilitate any form of financial transaction on behalf of users.</p>
-          </div>
-
-          <div class="subsection">
-            <p><strong>7.3.</strong> Nothing on the Website should be interpreted as an offer to provide regulated financial services, including but not limited to payment processing, currency exchange, money remittance, or investment services.</p>
+            <p><strong>8.3.</strong> You use the Website solely at your own risk. No advice or information, whether oral or written, obtained from Fincord or through the Site shall create any warranty not expressly stated in these Terms.</p>
           </div>
         </div>
 
         <div class="section">
-          <h2 class="section_title">8. PERSONAL DATA & COOKIES</h2>
+          <h2 class="section_title">9. NO FINANCIAL SERVICES OR CLIENT FUNDS HANDLING</h2>
           
           <div class="subsection">
-            <p><strong>8.1.</strong> Your use of the Website may involve the collection and processing of personal data and the placement of cookies or similar technologies.</p>
+            <p><strong>9.1.</strong> Fincord is not a licensed financial institution, payment service provider, or electronic money institution under the laws of any jurisdiction.</p>
           </div>
 
           <div class="subsection">
-            <p><strong>8.2.</strong> Such activities are governed exclusively by our <router-link to="/privacy-policy" class="policy_link">Privacy Policy</router-link> and <router-link to="/cookie-policy" class="policy_link">Cookie Policy</router-link> forming an integral part of these Terms and is available at the footer of every page.</p>
+            <p><strong>9.2.</strong> The Website and its associated services do not involve the receipt, holding, processing, or transmission of client funds. Fincord does not accept deposits, hold client money, or facilitate any form of financial transaction on behalf of users.</p>
           </div>
 
           <div class="subsection">
-            <p><strong>8.3.</strong> By continuing to browse or interact with the Website, you acknowledge that you have read those policies and agree to the processing of your personal data and the use of cookies in accordance with them. If you do not agree, please adjust your browser settings or discontinue use of the Website.</p>
+            <p><strong>9.3.</strong> Any financial operations undertaken by users in relation to services or tools described on the Website are carried out independently and outside the scope of Fincord's responsibilities.</p>
+          </div>
+
+          <div class="subsection">
+            <p><strong>9.4.</strong> Nothing on the Website should be interpreted as an offer to provide regulated financial services, including but not limited to payment processing, currency exchange, money remittance, or investment services.</p>
           </div>
         </div>
 
         <div class="section">
-          <h2 class="section_title">9. LIMITATION OF LIABILITY</h2>
+          <h2 class="section_title">10. LIMITATION OF LIABILITY</h2>
           
           <div class="subsection">
-            <p><strong>9.1.</strong> Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law (including liability for death or personal injury caused by negligence or for fraud). Subject to the foregoing, Fincord, its agents shall not be liable for any indirect, incidental, special or consequential loss, or for any loss of profits, revenue, data or goodwill, arising out of or in connection with your use of, or inability to use, the Website.</p>
+            <p><strong>10.1.</strong> Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law (including liability for death or personal injury caused by negligence or for fraud). Subject to the foregoing, Fincord, its agents shall not be liable for any indirect, incidental, special or consequential loss, or for any loss of profits, revenue, data or goodwill, arising out of or in connection with your use of, or inability to use, the Website.</p>
           </div>
         </div>
 
         <div class="section">
-          <h2 class="section_title">10. INDEMNITY</h2>
+          <h2 class="section_title">11. INDEMNITY</h2>
           
           <div class="subsection">
-            <p><strong>10.1.</strong> You agree to indemnify, defend and hold harmless Fincord, its subsidiaries, affiliates, and agents from and against any and all claims, damages, liabilities, costs and expenses (including reasonable legal fees) arising out of or relating to your breach of these Terms or your misuse of the Website.</p>
+            <p><strong>11.1.</strong> You agree to indemnify, defend and hold harmless Fincord, its subsidiaries, affiliates, and agents from and against any and all claims, damages, liabilities, costs and expenses (including reasonable legal fees) arising out of or relating to your breach of these Terms or your misuse of the Website.</p>
           </div>
         </div>
 
         <div class="section">
-          <h2 class="section_title">11. TERMINATION</h2>
+          <h2 class="section_title">12. PERSONAL DATA & COOKIES</h2>
           
           <div class="subsection">
-            <p><strong>11.1.</strong> We reserve the right, in our sole discretion and without notice, to terminate or suspend your access to all or any part of the Website for any reason, including without limitation your breach of these Terms. The provisions of these Terms which by their nature should survive termination shall so survive.</p>
+            <p><strong>12.1.</strong> Your use of the Website may involve the collection and processing of personal data and the placement of cookies or similar technologies.</p>
+          </div>
+
+          <div class="subsection">
+            <p><strong>12.2.</strong> Such activities are governed exclusively by our <router-link to="/privacy-policy" class="policy_link">Privacy Policy</router-link> and <router-link to="/cookie-policy" class="policy_link">Cookie Policy</router-link> forming an integral part of these Terms and is available at the footer of every page.</p>
+          </div>
+
+          <div class="subsection">
+            <p><strong>12.3.</strong> By continuing to browse or interact with the Website, you acknowledge that you have read those policies and agree to the processing of your personal data and the use of cookies in accordance with them. If you do not agree, please adjust your browser settings or discontinue use of the Website.</p>
           </div>
         </div>
 
         <div class="section">
-          <h2 class="section_title">12. MISCELLANEOUS</h2>
+          <h2 class="section_title">13. TERMINATION</h2>
           
           <div class="subsection">
-            <p><strong>12.1.</strong> If any provision of these Terms is found to be invalid or unenforceable, such provision shall be deemed deleted and shall not affect the validity and enforceability of the remaining provisions.</p>
-          </div>
-
-          <div class="subsection">
-            <p><strong>12.2.</strong> These Terms (together with any other documents referred to herein) constitute the entire agreement between You and Fincord regarding Your use of the Website and supersede any prior agreements.</p>
-          </div>
-
-          <div class="subsection">
-            <p><strong>12.3.</strong> No failure or delay by the Fincord in exercising any right under these Terms shall operate as a waiver of that right.</p>
+            <p><strong>13.1.</strong> We reserve the right, in our sole discretion and without notice, to terminate or suspend your access to all or any part of the Website for any reason, including without limitation your breach of these Terms. The provisions of these Terms which by their nature should survive termination shall so survive.</p>
           </div>
         </div>
 
         <div class="section">
-          <h2 class="section_title">13. CONTACT US</h2>
+          <h2 class="section_title">14. MISCELLANEOUS</h2>
           
           <div class="subsection">
-            <p><strong>13.1.</strong> You may contact Us via the <a href="https://fincord.tech/#contact" target="_blank">Form</a>.</p>
+            <p><strong>14.1.</strong> If any provision of these Terms is found to be invalid or unenforceable, such provision shall be deemed deleted and shall not affect the validity and enforceability of the remaining provisions.</p>
+          </div>
+
+          <div class="subsection">
+            <p><strong>14.2.</strong> These Terms (together with any other documents referred to herein) constitute the entire agreement between You and Fincord regarding Your use of the Website and supersede any prior agreements.</p>
+          </div>
+
+          <div class="subsection">
+            <p><strong>14.3.</strong> No failure or delay by the Fincord in exercising any right under these Terms shall operate as a waiver of that right.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section_title">15. CONTACT US</h2>
+          
+          <div class="subsection">
+            <p><strong>15.1.</strong> You may contact Us via the <a href="https://fincord.tech/#contact" target="_blank">Form</a>.</p>
           </div>
         </div>
       </div>
@@ -343,35 +371,28 @@
   }
 }
 
-.prohibited_list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
+.definition_list {
+  color: #B6BDCC;
+  font-size: 1.125rem;
+  line-height: 150%;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
   
   @media screen and (max-width: 768px) {
+    font-size: 1rem;
     margin-left: 0;
-    padding-left: 0;
+    padding-left: 1.5rem;
   }
   
   li {
-    color: #B6BDCC;
-    font-size: 1.125rem;
-    line-height: 150%;
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
     position: relative;
-    
-    @media screen and (max-width: 768px) {
-      font-size: 1rem;
-      margin-left: 0;
-      padding-left: 1.5rem;
-    }
     
     &::before {
       content: "•";
       color: #C9B36E;
       position: absolute;
-      left: 0;
+      left: -1.5rem;
       font-weight: bold;
     }
   }
