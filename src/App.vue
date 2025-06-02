@@ -2,12 +2,14 @@
   <div class="app-container">
     <Header />
     <router-view />
+    <CookieBanner />
   </div>
   
 </template>
 
 <script setup lang="ts">
 import Header from './components/0_Header.vue'
+import CookieBanner from './components/CookieBanner.vue'
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
