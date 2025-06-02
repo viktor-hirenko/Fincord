@@ -58,7 +58,8 @@ onMounted(() => {
   left: 0;
   right: 0;
   z-index: 2000;
-  padding: 1rem;
+  padding: 0.5rem;
+  background: #000;
   
   @media screen and (min-width: 769px) {
     bottom: 2rem;
@@ -72,25 +73,20 @@ onMounted(() => {
 .cookie-banner__container {
   position: relative;
   background: #000;
-  border: 1px solid #333;
-  border-radius: 1rem;
+  border: 3px solid rgba(201, 179, 110, 0.30);
+  border-radius: 0;
   padding: 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  
-  @media screen and (max-width: 768px) {
-    border-radius: 1rem 1rem 0 0;
-    border-bottom: none;
-  }
 }
 
 .cookie-banner__close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 23px;
+  height: 27px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -101,7 +97,7 @@ onMounted(() => {
     position: absolute;
     width: 70%;
     height: 1px;
-    background-color: #fff;
+    background-color: #C9B36E;
     transition: opacity 0.2s ease;
     
     &:nth-child(1) {
@@ -114,7 +110,7 @@ onMounted(() => {
   }
   
   &:hover span {
-    background-color: #C9B36E;
+    opacity: 0.7;
   }
 }
 
@@ -123,29 +119,28 @@ onMounted(() => {
 }
 
 .cookie-banner__title {
-  color: #FFF;
-  font-size: 0.875rem;
+  color: #F2F2F2;
+  font-size: 1rem;
+  font-style: normal;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  margin: 0 0 0.75rem 0;
+  line-height: normal;
   text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
   
   @media screen and (min-width: 769px) {
-    font-size: 1rem;
     margin-bottom: 1rem;
   }
 }
 
 .cookie-banner__text {
-  color: #B6BDCC;
-  font-size: 0.875rem;
+  color: #C9B36E;
+  font-size: 0.75rem;
+  line-height: 130%;
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.4;
   margin: 0 0 1.25rem 0;
   
   @media screen and (min-width: 769px) {
-    font-size: 0.9rem;
-    line-height: 1.5;
     margin-bottom: 1.5rem;
   }
 }
@@ -163,27 +158,29 @@ onMounted(() => {
 .cookie-banner__actions {
   display: flex;
   justify-content: center;
-  
-  @media screen and (min-width: 769px) {
-    justify-content: flex-start;
-  }
+  margin-right: -2rem;
+  margin-left: -1.5rem;
+  margin-bottom: -1.5rem;
 }
 
 .cookie-banner__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5rem;
-  padding: 0 2rem;
-  background: #F2F2F2;
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 95%;
+    background: #F2F2F2;
+    left: 50%;
+    transform: translateX(-49%);
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
   
   @media screen and (min-width: 769px) {
     height: 3rem;
-    padding: 0 1.7rem;
   }
   
   &:hover {
