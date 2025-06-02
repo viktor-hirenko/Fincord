@@ -1,13 +1,13 @@
 <template>
   <div class="main_wrapper">
-    <PrivacyPolicyContent />
+    <TermsContent />
     <Footer />
     <div class="noise"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import PrivacyPolicyContent from '../components/PrivacyPolicyContent.vue'
+import TermsContent from '../components/TermsContent.vue'
 import Footer from '../components/7_Footer.vue'
 </script>
 

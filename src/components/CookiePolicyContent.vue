@@ -9,8 +9,8 @@
 
       <div class="cookie_policy_content">
         <div class="policy_intro">
-          <p>This Cookie Policy (hereinafter – the "Policy") constitutes an agreement between Fincord, (hereinafter - "<strong>Fincord</strong>", "<strong>We</strong>", "<strong>Our</strong>", "<strong>Us</strong>") and a capable natural person (hereinafter "User", "You", "Your"), who uses Our website <a href="https://fincord.tech/" target="_blank">https://fincord.tech/</a> (hereinafter "Website") according to the Terms and Conditions, in regard to Your Personal Data Processing through cookies.</p>
-          <p>Terms and headings that are used in this Cookie Policy, but not defined, have similar meanings to the terms in the Privacy Policy and Terms and Conditions.</p>
+          <p>This Cookie Policy (hereinafter – the "Policy") constitutes an agreement between Fincord, (hereinafter - "<strong>Fincord</strong>", "<strong>We</strong>", "<strong>Our</strong>", "<strong>Us</strong>") and a capable natural person (hereinafter "User", "You", "Your"), who uses Our website <a href="https://fincord.tech/" target="_blank">https://fincord.tech/</a> (hereinafter "Website") according to the <router-link to="/terms" class="policy_link">Terms and Conditions</router-link>, in regard to Your Personal Data Processing through cookies.</p>
+          <p>Terms and headings that are used in this Cookie Policy, but not defined, have similar meanings to the terms in the <router-link to="/privacy-policy" class="policy_link">Privacy Policy</router-link> and <router-link to="/terms" class="policy_link">Terms and Conditions</router-link>.</p>
         </div>
 
         <div class="section">
@@ -141,6 +141,7 @@
 
 <style lang="scss" scoped>
 .cookie_policy {
+  margin-top: 3rem;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -407,6 +408,18 @@
       left: 0;
       font-weight: bold;
     }
+  }
+}
+
+.policy_link {
+  color: #C9B36E;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #FFF;
+    text-decoration: underline;
   }
 }
 

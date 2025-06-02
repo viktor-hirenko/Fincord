@@ -27,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/cookie-policy',
     name: 'CookiePolicy',
     component: () => import('../views/CookiePolicy.vue')
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: () => import('../views/Terms.vue')
   }
 ]
 

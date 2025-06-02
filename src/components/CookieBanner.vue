@@ -120,7 +120,7 @@ onMounted(() => {
 
 .cookie-banner__title {
   color: #F2F2F2;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -134,7 +134,7 @@ onMounted(() => {
 
 .cookie-banner__text {
   color: #C9B36E;
-  font-size: 0.75rem;
+  font-size: 1rem;
   line-height: 130%;
   font-style: normal;
   font-weight: 400;
