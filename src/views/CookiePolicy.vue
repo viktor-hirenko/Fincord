@@ -1,13 +1,13 @@
 <template>
   <div class="main_wrapper">
-    <ComingSoon />
+    <CookiePolicyContent />
     <Footer />
     <div class="noise"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import ComingSoon from '../components/ComingSoon.vue'
+import CookiePolicyContent from '../components/CookiePolicyContent.vue'
 import Footer from '../components/7_Footer.vue'
 </script>
 
