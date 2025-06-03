@@ -299,7 +299,6 @@ h2 {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-size: 16px;
     @media screen and (max-width: 768px) {
       font-size: 16px;
     }
@@ -527,7 +526,8 @@ h2 {
 .contact_img {
   position: absolute;
   top: 240px;
-  left: -604px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1210px;
   height: 168px;
 }
