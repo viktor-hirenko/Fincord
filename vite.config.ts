@@ -6,6 +6,10 @@ import * as path from 'path'
 export default defineConfig({
   plugins: [vue()],
   base: './',
+  server: {
+    port: 5180,
+    strictPort: true,
+  },
   resolve: {
     alias: {
       '@img': path.resolve(__dirname, 'src/assets/img'),

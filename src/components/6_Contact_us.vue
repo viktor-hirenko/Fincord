@@ -73,6 +73,7 @@
         </div>
         
         <div class="submit_wrapper">
+          <p v-if="submitError" class="error-message submit_error">{{ submitError }}</p>
           <button @click="submitForm" class="submit_button" :disabled="isSubmitting">
             {{ isSubmitting ? 'Sending...' : 'Send' }}
           </button>
@@ -122,6 +123,11 @@ const formData = reactive<FormData>({
 const errors = reactive<Errors>({});
 const formSubmitted = ref(false);
 const isSubmitting = ref(false);
+const submitError = ref('');
+
+const FORM_ACTION_URL =
+  'https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec';
+const SUBMIT_TIMEOUT_MS = 15000;
 
 const validateForm = (): boolean => {
   let isValid = true;
@@ -158,27 +164,29 @@ const validateForm = (): boolean => {
   return isValid;
 };
 
+function cleanupSubmitElements(form: HTMLFormElement, iframe: HTMLIFrameElement) {
+  form.remove();
+  iframe.remove();
+}
+
 const submitForm = () => {
-  // Валидация формы
   if (!validateForm()) {
     return;
   }
-  
+
+  submitError.value = '';
   isSubmitting.value = true;
-  
-  // Создаем скрытый iframe для отправки
+
   const iframe = document.createElement('iframe');
   iframe.name = 'hidden_iframe';
   iframe.style.display = 'none';
   document.body.appendChild(iframe);
-  
-  // Создаем форму и отправляем данные
+
   const form = document.createElement('form');
   form.method = 'POST';
-  form.action = 'https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec';
+  form.action = FORM_ACTION_URL;
   form.target = 'hidden_iframe';
-  
-  // Добавляем поля формы
+
   const addField = (name: string, value: string | number | boolean) => {
     const input = document.createElement('input');
     input.type = 'hidden';
@@ -186,7 +194,7 @@ const submitForm = () => {
     input.value = value.toString();
     form.appendChild(input);
   };
-  
+
   addField('name', formData.name);
   addField('email', formData.email);
   addField('phone', formData.phone);
@@ -194,20 +202,45 @@ const submitForm = () => {
   addField('volume', formData.volume || '');
   addField('message', formData.message || '');
   addField('agreement', formData.agreement ? 'Yes' : 'No');
-  
-  // Добавляем форму на страницу и отправляем
+
   document.body.appendChild(form);
-  form.submit();
-  
-  // После небольшой задержки показываем благодарность
-  setTimeout(() => {
-    formSubmitted.value = true;
+
+  let isFinished = false;
+  let hasSubmitted = false;
+
+  const finish = (success: boolean, message?: string) => {
+    if (isFinished) {
+      return;
+    }
+
+    isFinished = true;
+    window.clearTimeout(timeoutId);
+    cleanupSubmitElements(form, iframe);
     isSubmitting.value = false;
-    
-    // Удаляем форму и iframe
-    document.body.removeChild(form);
-    document.body.removeChild(iframe);
-  }, 1000);
+
+    if (success) {
+      formSubmitted.value = true;
+      return;
+    }
+
+    submitError.value =
+      message || 'There was an error submitting your form. Please try again.';
+  };
+
+  iframe.onload = () => {
+    if (!hasSubmitted) {
+      return;
+    }
+
+    finish(true);
+  };
+
+  const timeoutId = window.setTimeout(() => {
+    finish(false, 'Request timed out. Please try again.');
+  }, SUBMIT_TIMEOUT_MS);
+
+  hasSubmitted = true;
+  form.submit();
 };
 </script>
 
@@ -459,8 +492,14 @@ h2 {
 
 .submit_wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2rem;
+}
+
+.submit_error {
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .submit_button {
