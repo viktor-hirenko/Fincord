@@ -4,7 +4,7 @@
       <div class="about_us_titles_wrapper">
         <div class="about_us_title">Smart control for growing payments</div>
         <div class="about_us_subtitle">Fincord gives you complete control over your payment operations<span class="no-break-dash">—</span>without added complexity, delays, or risk.</div>
-        <router-link to="/#contact" class="desktop_button">Get in touch</router-link>
+        <router-link to="/#contact" class="desktop_button" @click="trackCta('about', 'Get in touch')">Get in touch</router-link>
       </div>
       <div class="text_about_us_wrapper">
         <div class="text_about_us_title">
@@ -31,15 +31,20 @@
         <div class="text_about_us_content">
           Track every payment in real time and make faster, data-driven decisions with complete clarity.
         </div>
-        <router-link to="/#contact" class="mobile_button">Get in touch</router-link>
+        <router-link to="/#contact" class="mobile_button" @click="trackCta('about', 'Get in touch')">Get in touch</router-link>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useAnalytics } from '../composables/useAnalytics';
 
+const { trackCtaClick } = useAnalytics();
 
+const trackCta = (location: string, label: string): void => {
+  trackCtaClick({ cta_location: location, cta_label: label, link_url: '/#contact' });
+};
 </script>
 
 <style lang="scss" scoped>

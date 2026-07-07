@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
+import { useAnalytics } from '../composables/useAnalytics'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -48,6 +49,11 @@ const router = createRouter({
     }
     return { top: 0 }
   }
+})
+
+// Ручной page_view для SPA (авто-page_view в GA4-теге GTM отключён)
+router.afterEach((to) => {
+  useAnalytics().trackPageView(to.fullPath, document.title)
 })
 
 export default router 

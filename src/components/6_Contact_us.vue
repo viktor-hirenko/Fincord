@@ -11,7 +11,7 @@
       <div v-if="!formSubmitted">
         <h2>GET IN TOUCH AND RECEIVE <br class="mobile_br"> QUOTA FOR YOUR BUSINESS</h2>
         
-        <div class="form_grid">
+        <div class="form_grid" @focusin="onFormStart">
           <div class="form_field">
             <label for="name">Your name</label>
             <input type="text" id="name" v-model="formData.name" placeholder="John Smith">
@@ -90,6 +90,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
+import { useAnalytics } from '../composables/useAnalytics';
 import linesContactImage from '../assets/images/lines_contact.svg';
 import contactImage from '../assets/images/contact.svg';
 import contactImageMobile from '../assets/images/contact_img_mobile.svg';
@@ -124,6 +125,16 @@ const errors = reactive<Errors>({});
 const formSubmitted = ref(false);
 const isSubmitting = ref(false);
 const submitError = ref('');
+
+const { trackEvent } = useAnalytics();
+const formStarted = ref(false);
+
+// form_start — при первом взаимодействии с любым полем формы
+const onFormStart = (): void => {
+  if (formStarted.value) return;
+  formStarted.value = true;
+  trackEvent('form_start', { form_id: 'contact' });
+};
 
 const FORM_ACTION_URL =
   'https://script.google.com/macros/s/AKfycbxQD15Ox03QUcnG9Kyr38_QAjfmSnxaeXBc2Pi6hegn1E8E5nRTYszG8ytQTLSuEb79/exec';
@@ -174,6 +185,9 @@ const submitForm = () => {
     return;
   }
 
+  // form_submit — валидная форма отправлена (ещё без подтверждения от сервера)
+  trackEvent('form_submit', { form_id: 'contact', volume: formData.volume || undefined });
+
   submitError.value = '';
   isSubmitting.value = true;
 
@@ -219,12 +233,18 @@ const submitForm = () => {
     isSubmitting.value = false;
 
     if (success) {
+      // generate_lead — ключевая конверсия: форма успешно отправлена
+      trackEvent('generate_lead', { form_id: 'contact', volume: formData.volume || undefined });
       formSubmitted.value = true;
       return;
     }
 
     submitError.value =
       message || 'There was an error submitting your form. Please try again.';
+    trackEvent('form_error', {
+      form_id: 'contact',
+      error_message: submitError.value,
+    });
   };
 
   iframe.onload = () => {

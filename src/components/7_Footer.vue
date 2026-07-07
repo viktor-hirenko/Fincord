@@ -1,14 +1,28 @@
 <template>
   <div class="footer">
     <div class="footer_wrapper">
-      <router-link to="/privacy-policy" class="footer_text">Privacy Policy</router-link>
-      <router-link to="/cookie-policy" class="footer_text">Cookie Policy</router-link>
+      <router-link
+        to="/privacy-policy"
+        class="footer_text"
+        @click="trackCta('footer', 'Privacy Policy', '/privacy-policy')"
+      >Privacy Policy</router-link>
+      <router-link
+        to="/cookie-policy"
+        class="footer_text"
+        @click="trackCta('footer', 'Cookie Policy', '/cookie-policy')"
+      >Cookie Policy</router-link>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useAnalytics } from '../composables/useAnalytics';
 
+const { trackCtaClick } = useAnalytics();
+
+const trackCta = (location: string, label: string, url: string): void => {
+  trackCtaClick({ cta_location: location, cta_label: label, link_url: url });
+};
 </script>
 
 <style lang="scss" scoped>

@@ -41,6 +41,14 @@ const checkCookieConsent = (): void => {
 const acceptCookies = (): void => {
   localStorage.setItem('cookie-consent', 'accepted')
   showBanner.value = false
+
+  // Google Consent Mode v2: разрешаем аналитику после согласия
+  window.gtag?.('consent', 'update', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted',
+  })
 }
 
 onMounted(() => {

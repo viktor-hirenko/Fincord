@@ -16,12 +16,16 @@
           <router-link to="/hiring" class="menu-link">hiring</router-link>
         </div>
         <div class="menu_item">
-          <router-link to="/blog" class="menu-link">blog</router-link>
+          <router-link
+            to="/blog"
+            class="menu-link"
+            @click="trackCta('header', 'blog', '/blog')"
+          >blog</router-link>
         </div>
       </div>
       
       <div class="header-controls">
-        <router-link to="/#contact">
+        <router-link to="/#contact" @click="trackCta('header', 'Get in touch', '/#contact')">
           <div class="header__button">
             <div class="button_text">Get in touch</div>
           </div>
@@ -59,10 +63,14 @@
             <router-link to="/hiring" class="mobile-menu-link">hiring</router-link>
           </div>
           <div class="mobile-menu__item" @click="closeMenu">
-            <router-link to="/blog" class="mobile-menu-link">blog</router-link>
+            <router-link
+              to="/blog"
+              class="mobile-menu-link"
+              @click="trackCta('mobile_menu', 'blog', '/blog')"
+            >blog</router-link>
           </div>
         </div>
-        <router-link to="/#contact" @click="closeMenu">
+        <router-link to="/#contact" @click="closeMenu(); trackCta('mobile_menu', 'Get in touch', '/#contact')">
           <div class="header__button mobile-menu__button">
             <div class="button_text">Get in touch</div>
           </div>
@@ -75,6 +83,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import logoImage from '../assets/images/logo.svg';
+import { useAnalytics } from '../composables/useAnalytics';
+
+const { trackCtaClick } = useAnalytics();
+
+const trackCta = (location: string, label: string, url: string): void => {
+  trackCtaClick({ cta_location: location, cta_label: label, link_url: url });
+};
 
 const isMenuOpen = ref(false);
 

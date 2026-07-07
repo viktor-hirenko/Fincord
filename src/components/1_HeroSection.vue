@@ -12,7 +12,7 @@
         <div class="hero_counter">{{ formattedCounter }}</div>
         <div class="hero_counter_description">transactions <br class="mobile_br"> successfully <br> completed today</div>
       </div>
-      <a href="#contact">
+      <a href="#contact" @click="trackCta('hero', 'Get in touch')">
           <div class="mobile-menu__button">
             Get in touch
           </div>
@@ -66,14 +66,14 @@
               Minimise risk and stay
 ahead of regulations. We help tailor and implement compliance frameworks that fit your business and industry.</div>
           </div>
-          <a href="#contact">
+          <a href="#contact" @click="trackCta('hero_services', 'Get in touch')">
           <div class="mobile-menu__button mobile-menu__button_second">
             Get in touch
           </div>
         </a>
         </div>
         <div class="buttons_wrapper">
-        <router-link to="/#contact" class="cta_button">
+        <router-link to="/#contact" class="cta_button" @click="trackCta('hero', 'Get in touch', '/#contact')">
           <div class="button_cotainer">
             Get in touch
             <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -81,7 +81,7 @@ ahead of regulations. We help tailor and implement compliance frameworks that fi
 </svg>
           </div>
         </router-link>
-        <router-link to="/hiring" class="cta_button">
+        <router-link to="/hiring" class="cta_button" @click="trackCta('hero', 'we are hiring', '/hiring')">
           <div class="button_cotainer">
             we are hiring
             <svg class="arrow_icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -108,7 +108,7 @@ ahead of regulations. We help tailor and implement compliance frameworks that fi
 With a dedicated account manager available 24/7 and access to a worldwide network of payment providers, we deliver fast, secure, and flexible transactions across markets, currencies, and platforms.
 
       </div>
-      <a href="#contact">
+      <a href="#contact" @click="trackCta('hero_cta', 'Get in touch')">
           <div class="mobile-menu__button mobile-menu__button_third">
             Get in touch
           </div>
@@ -121,12 +121,19 @@ With a dedicated account manager available 24/7 and access to a worldwide networ
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { useAnalytics } from '../composables/useAnalytics';
 import heroImage from '../assets/images/hero_img.svg';
 import heroImageMobile from '../assets/images/hero_img_mobile.svg';
 import heroImage1 from '../assets/images/hero_img1.svg';
 import linesImage from '../assets/images/lines.svg';
 import line1Image from '../assets/images/line1.svg';
 import mapImage from '../assets/images/map.webp';
+
+const { trackCtaClick } = useAnalytics();
+
+const trackCta = (location: string, label: string, url = '#contact'): void => {
+  trackCtaClick({ cta_location: location, cta_label: label, link_url: url });
+};
 
 // Счетчик
 const counter = ref(0);
